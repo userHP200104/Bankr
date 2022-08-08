@@ -3,13 +3,74 @@
     x:Class="Bankr.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:Bankr"
-    Shell.FlyoutBehavior="Disabled">
+    xmlns:local="clr-namespace:Bankr" xmlns:local1="clr-namespace:Bankr.Views"
+    Shell.FlyoutBehavior="Locked">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    <Shell.FlyoutHeader>
+        <local1:FlyoutHeader/>
+    </Shell.FlyoutHeader>
+
+     <FlyoutItem Title="Home"
+                 FlyoutIcon="lock.png">
+
+
+        <Tab>
+            <ShellContent Title="Home"
+                          FlyoutIcon="lock.png"
+                          ContentTemplate="{DataTemplate local:Views.HomePage}"
+                          Route="HomePage"/>
+        </Tab>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Clients"
+                FlyoutIcon="lock.png">
+        <Tab>
+            <ShellContent Title="Clients"
+                          FlyoutIcon="lock.png"
+                          ContentTemplate="{DataTemplate local:Views.ClientsPage}"
+                          Route="ClientsPage" />
+        </Tab>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Accounts"
+                FlyoutIcon="lock.png">
+        <Tab>
+            <ShellContent Title="Accounts"
+                          FlyoutIcon="lock.png"
+                          ContentTemplate="{DataTemplate local:Views.AccountsPage}"
+                          Route="AccountsPage" />
+        </Tab>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Staff"
+                FlyoutIcon="lock.png">
+        <Tab>
+            <ShellContent Title="Staff"
+                          FlyoutIcon="lock.png"
+                          ContentTemplate="{DataTemplate local:Views.StaffPage}"
+                          Route="StaffPage" />
+        </Tab>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Funds"
+                FlyoutIcon="lock.png">
+        <Tab>
+            <ShellContent Title="Funds"
+                          FlyoutIcon="lock.png"
+                            ContentTemplate="{DataTemplate local:Views.FundsPage}"
+                            Route="FundsPage" />
+        </Tab>
+    </FlyoutItem>
+
+    <!--<Tab>
+    <ShellContent Title="Logout"
+                  Icon="lock.png"
+                  ContentTemplate="{DataTemplate local:Views.LogoutPage}"
+                  Route="LogoutPage" />
+    </Tab>-->
+
 
 </Shell>
+
+
 

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Bankr.Views.SingleAccount"
+             Title="SingleAccount"
+             BackgroundImageSource="backdrop.png"
+             BackgroundColor="{x:StaticResource BankrBlack}">
+    <VerticalStackLayout WidthRequest="900" Margin="0,50" Background="">
+        
+        <HorizontalStackLayout WidthRequest="900" Spacing="450" Margin="0,0,0,25">
+            <VerticalStackLayout WidthRequest="225" Spacing="2">
+                <Label TextColor="{x:StaticResource BankrNeonPink}" FontSize="Micro" >Total</Label>
+                <Label TextColor="{x:StaticResource BankrWhite}" FontSize="Large">R3,112,119.00</Label>
+            </VerticalStackLayout>
+            <VerticalStackLayout WidthRequest="225" Spacing="2">
+                <HorizontalStackLayout>
+                    <Label VerticalOptions="Center" TextColor="{x:StaticResource BankrNeonBlue}" FontSize="Micro" >Account Holder</Label>
+                    <Button Text="Edit" BackgroundColor="{x:StaticResource BankrBlack}" TextColor="{x:StaticResource BankrNeonPink}"></Button>
+                </HorizontalStackLayout>
+                <Label TextColor="{x:StaticResource BankrWhite}" FontSize="Medium">Arthur Golding</Label>
+                <Label TextColor="{x:StaticResource BankrWhite}" Opacity="0.7" FontSize="Micro">#018392048305</Label>
+            </VerticalStackLayout>
+        </HorizontalStackLayout>
+
+        <VerticalStackLayout HeightRequest="501" BackgroundColor="{x:StaticResource BankrBlack}" Padding="0" IsClippedToBounds="True">
+            <VerticalStackLayout.Shadow>
+                <Shadow 
+                            Brush="black"
+                            Offset="0,0"
+                            Radius="50"
+                            Opacity=".5"/>
+            </VerticalStackLayout.Shadow>
+
+            <Frame HeightRequest="501" BackgroundColor="{x:StaticResource BankrBlack}" Padding="0" HasShadow="True" BorderColor="{x:StaticResource BankrBlack}" IsClippedToBounds="True">
+            <Frame.Shadow>
+                <Shadow
+                            Brush="black"
+                            Offset="0,10"
+                            Radius="20"
+                            Opacity=".5"/>
+            </Frame.Shadow>
+            
+            <VerticalStackLayout HeightRequest="500"  Padding="0" BackgroundColor="{x:StaticResource BankrBlack}">
+
+
+                <HorizontalStackLayout Margin="0,0,0,10" WidthRequest="900" HeightRequest="90" Padding="35" Spacing="100" BackgroundColor="{x:StaticResource BankrBlack}">
+
+                    <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="Start"  WidthRequest="200" Text="Transaction Reference"/>
+                    <Label TextColor="{x:StaticResource BankrWhite}" HorizontalTextAlignment="Center" WidthRequest="200" Text="Amount"/>
+                    <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="End" WidthRequest="200" Text="Date"/>
+                    <HorizontalStackLayout.Shadow>
+                        <Shadow
+                            Brush="black"
+                            Offset="0,10"
+                            Radius="20"
+                            Opacity=".5"
+                            />
+                    </HorizontalStackLayout.Shadow>
+                </HorizontalStackLayout>
+                <ScrollView HeightRequest="325">
+                    <VerticalStackLayout>
+                        <HorizontalStackLayout WidthRequest="900" HeightRequest="75" Padding="25,15,15,25" Spacing="100">
+                            <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="Start"  WidthRequest="200" Text="Louis Vitton Sandton"/>
+                            <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="Center" WidthRequest="200" Text="-R330,000.00"/>
+                            <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="End" WidthRequest="200" Text="07-26-2022"/>
+                        </HorizontalStackLayout>
+
+                        <HorizontalStackLayout WidthRequest="900" HeightRequest="75" Padding="25,15,15,25" Spacing="100">
+                            <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="Start"  WidthRequest="200" Text="Stock Dividends"/>
+                            <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="Center" WidthRequest="200" Text="+R1,500.00"/>
+                            <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="End" WidthRequest="200" Text="07-25-2022"/>
+                        </HorizontalStackLayout>
+
+                    </VerticalStackLayout>
+                </ScrollView>
+
+                    <HorizontalStackLayout Margin="0" VerticalOptions="End" BackgroundColor="{x:StaticResource BankrBlack}" HeightRequest="75">
+
+                    <Label  VerticalOptions="Center"  WidthRequest="900" HorizontalTextAlignment="Center" TextColor="{x:StaticResource BankrWhite}" FontSize="Medium">Gold Checking Account</Label>
+                    <HorizontalStackLayout.Shadow>
+                        <Shadow
+                        Brush="black"
+                        Offset="0,-10"
+                        Radius="30"
+                        Opacity=".5"
+                        />
+                    </HorizontalStackLayout.Shadow>
+                </HorizontalStackLayout>
+
+
+
+            </VerticalStackLayout>
+
+        </Frame>
+        </VerticalStackLayout>
+
+
+    </VerticalStackLayout>
+</ContentPage>

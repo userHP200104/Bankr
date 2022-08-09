@@ -4,12 +4,36 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:Bankr"
-    Shell.FlyoutBehavior="Disabled">
+    Shell.FlyoutBehavior="Locked"
+    FlyoutWidth="150"
+    FlyoutBackgroundColor="{x:StaticResource BankrBlack}"
+    Shell.NavBarIsVisible="False"
+    >
 
+    <FlyoutItem Title="Accounts" >
+
+        <Tab>
+            
+            <ShellContent
+                
+                ContentTemplate="{DataTemplate local:Views.Accounts}"
+                Route="ProfilePage" 
+                
+            />
+        </Tab>
+    </FlyoutItem>
+    <FlyoutItem Title="Staff"
+                >
+        <Tab>
+            <ShellContent
+                ContentTemplate="{DataTemplate local:Views.Staff}"
+                Route="Staff" 
+            />
+        </Tab>
+    </FlyoutItem>
     <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+        ContentTemplate="{DataTemplate local:Views.SingleAccount}"
+        Route="Account"></ShellContent>
 
 </Shell>
 

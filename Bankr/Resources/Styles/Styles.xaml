@@ -163,6 +163,11 @@
         </Setter>
     </Style>
 
+    <Style TargetType="Label" Class="FlyoutItemLabelStyle">
+        <Setter Property="TextColor"
+                Value="White"></Setter>
+    </Style>
+
     <Style TargetType="ListView">
         <Setter Property="SeparatorColor" Value="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource Gray500}}" />
         <Setter Property="RefreshControlColor" Value="{AppThemeBinding Light={StaticResource Gray900}, Dark={StaticResource Gray200}}" />

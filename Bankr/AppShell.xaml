@@ -5,12 +5,76 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:Bankr"
     Shell.FlyoutBehavior="Locked"
-    FlyoutWidth="150"
+    FlyoutWidth="170"
     FlyoutBackgroundColor="{x:StaticResource BankrBlack}"
     Shell.NavBarIsVisible="False"
     >
 
-    <FlyoutItem Title="Accounts" >
+    <Shell.FlyoutHeaderTemplate>
+                 <DataTemplate>
+                    <Grid RowDefinitions="300">
+                        <Image Source="bankr_logo.png"
+                               VerticalOptions="Start"
+                               HorizontalOptions="Center"
+                               WidthRequest="40"
+                               HeightRequest="140"
+                               Margin="80"
+                        />
+
+                    </Grid>
+                </DataTemplate>
+
+            </Shell.FlyoutHeaderTemplate>
+            
+
+            <FlyoutItem Title="Home">
+                <Tab>
+
+                    <ShellContent ContentTemplate="{DataTemplate local:Views.Home}"
+                                  Route="Home"/>
+
+                </Tab>
+            </FlyoutItem>
+
+
+            <FlyoutItem Title="Clients">
+                <Tab>
+
+                    <ShellContent ContentTemplate="{DataTemplate local:Views.Accounts}"
+                                  Route="Accounts"/>
+
+                </Tab>
+            </FlyoutItem>
+
+            <FlyoutItem Title="Staff">
+                <Tab>
+
+                    <ShellContent ContentTemplate="{DataTemplate local:Views.Staff}"
+                                  Route="Staff"/>
+
+                </Tab>
+            </FlyoutItem>
+
+            <FlyoutItem Title="Funds">
+                <Tab>
+
+                    <ShellContent ContentTemplate="{DataTemplate local:Views.Funds}"
+                                  Route="Funds"/>
+
+                </Tab>
+            </FlyoutItem>
+
+            <FlyoutItem Title="Individual">
+                <Tab>
+
+                    <ShellContent ContentTemplate="{DataTemplate local:Views.SingleAccount}"
+                                  Route="SingleAccount"/>
+
+                </Tab>
+            </FlyoutItem>
+
+
+    <!--<FlyoutItem Title="Accounts" >
 
         <Tab>
             
@@ -33,7 +97,7 @@
     </FlyoutItem>
     <ShellContent
         ContentTemplate="{DataTemplate local:Views.SingleAccount}"
-        Route="Account"></ShellContent>
+        Route="Account"></ShellContent>-->
 
 </Shell>
 

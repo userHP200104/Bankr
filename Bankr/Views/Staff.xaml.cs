@@ -15,4 +15,9 @@ public partial class Staff : ContentPage
 		BankrDatabase database = await BankrDatabase.Instance;
 		listView.ItemsSource = await database.GetPeopleAsync();
 	}
+    private async void OnAddClicked(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync("//AddPerson");
+
+    }
 }

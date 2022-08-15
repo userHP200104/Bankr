@@ -12,31 +12,32 @@
 
     <FlyoutItem Title="Accounts" >
 
-        <Tab>
-            
-            <ShellContent
+        <ShellContent
                 
                 ContentTemplate="{DataTemplate local:Views.Accounts}"
                 Route="ProfilePage" 
                 
             />
-        </Tab>
     </FlyoutItem>
     <FlyoutItem Title="Staff"
                 >
-        <Tab>
-            <ShellContent
-                ContentTemplate="{DataTemplate local:Views.Staff}"
-                Route="Staff" 
-            />
-        </Tab>
+
+        <ShellContent
+            ContentTemplate="{DataTemplate local:Views.Staff}"
+            Route="Staff" 
+        />
+
     </FlyoutItem>
+
     <ShellContent
+        FlyoutItemIsVisible="False"
         ContentTemplate="{DataTemplate local:Views.SingleAccount}"
         Route="Account"></ShellContent>
     <ShellContent
+        FlyoutItemIsVisible="False"
         ContentTemplate="{DataTemplate local:Views.AddPersonView}"
         Route="AddPerson" />
 
 </Shell>
+
 

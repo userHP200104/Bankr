@@ -66,7 +66,7 @@
                     <HorizontalStackLayout  WidthRequest="900" BackgroundColor="{x:StaticResource BankrBlack}" HeightRequest="75">
 
                         <Label  VerticalOptions="Center"  WidthRequest="850" HorizontalTextAlignment="Center" TextColor="{x:StaticResource BankrWhite}" Opacity="0.2" FontAttributes="Bold" FontSize="Medium">STAFF</Label>
-                        <Label  VerticalOptions="Center"  WidthRequest="50" HorizontalTextAlignment="Center" TextColor="{x:StaticResource BankrNeonBlue}" Opacity="1" FontAttributes="Bold" FontSize="Large">+</Label>
+                        <Button   VerticalOptions="Center"  WidthRequest="50" BackgroundColor="{x:StaticResource BankrBlack}" TextColor="{x:StaticResource BankrNeonBlue}" Opacity="1" FontAttributes="Bold" FontSize="Large" Text="+" Clicked="OnAddClicked"></Button>
                         <HorizontalStackLayout.Shadow>
                             <Shadow
                             Brush="black"

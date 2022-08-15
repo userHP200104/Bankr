@@ -4,22 +4,26 @@ using SQLite;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SQLite.Net.Attributes;
+using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace Bankr.Model
 {
-    [Table("people")]
-    public class People
+   // [Table("people")]
+    public partial class People : ObservableObject
     {
         [PrimaryKey, AutoIncrement, Column("_id")]
         public int Id { get; set; }
-        
-        public string Name { get; set; }
-        public string Surname { get; set; }
 
-        public string Role { get; set; }
+        [ObservableProperty]
+        public string name;
 
-        public string Password { get; set; }
+        [ObservableProperty]
+        public string surname;
+
+        [ObservableProperty]
+        public string role;
+
+        //public string Password { get; set; }
 
     }
 }

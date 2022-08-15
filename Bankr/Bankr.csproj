@@ -46,11 +46,16 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Data\Database1.mdf" />
+	  <None Remove="Data\Database1_log.ldf" />
 	  <None Remove="Resources\Images\backdrop.svg" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <MauiXaml Update="Views\Accounts.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\AddPersonView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\SingleAccount.xaml">
@@ -63,6 +68,11 @@
 
 	<ItemGroup>
 	  <Folder Include="NewFolder\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0" />
+	  <PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
 	</ItemGroup>
 
 </Project>

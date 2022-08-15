@@ -43,61 +43,25 @@
                         </HorizontalStackLayout.Shadow>
                     </HorizontalStackLayout>
 
-                    <ScrollView HeightRequest="530" BackgroundColor="{x:StaticResource BankrBlack}">
-                    <VerticalStackLayout>
+                    <ListView x:Name="listView" HeightRequest="530" BackgroundColor="{x:StaticResource BankrBlack}">
+                        <ListView.ItemTemplate>
+                            <DataTemplate >
+                                <ViewCell>
+                                    <HorizontalStackLayout WidthRequest="900" HeightRequest="70" Padding="25" Spacing="75">
+                                        <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="Start"  WidthRequest="100" Text="{Binding Id}"/>
+                                        <Label TextColor="{x:StaticResource BankrWhite}" HorizontalTextAlignment="Center" WidthRequest="100" Text="{Binding Name}"/>
+                                        <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="Center" WidthRequest="100" Text="{Binding Surname}"/>
+                                        <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="Center" WidthRequest="100" Text="{Binding Role}"/>
+                                        <Label TextColor="{x:StaticResource BankrNeonPink}"  HorizontalTextAlignment="End" WidthRequest="100" Text="EDIT"/>
+                                    </HorizontalStackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
 
-                    <HorizontalStackLayout WidthRequest="900" HeightRequest="70" Padding="25" Spacing="75">
-                        <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="Start"  WidthRequest="100" Text="018 999 9999"/>
-                        <Label TextColor="{x:StaticResource BankrWhite}" HorizontalTextAlignment="Center" WidthRequest="100" Text="JOHN"/>
-                        <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="Center" WidthRequest="100" Text="CONNWAY"/>
-                        <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="Center" WidthRequest="100" Text="MANAGER"/>
-                        <Label TextColor="{x:StaticResource BankrNeonPink}"  HorizontalTextAlignment="End" WidthRequest="100" Text="EDIT"/>
-                    </HorizontalStackLayout>
-                    <HorizontalStackLayout WidthRequest="900" HeightRequest="70" Padding="25" Spacing="75">
-                        <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="Start"  WidthRequest="100" Text="128 959 9559"/>
-                        <Label TextColor="{x:StaticResource BankrWhite}" HorizontalTextAlignment="Center" WidthRequest="100" Text="SARAH"/>
-                        <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="Center" WidthRequest="100" Text="SMITH"/>
-                        <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="Center" WidthRequest="100" Text="ADMIN"/>
-                                <Label TextColor="{x:StaticResource BankrNeonPink}"  HorizontalTextAlignment="End" WidthRequest="100" Text="EDIT"/>
-                    </HorizontalStackLayout>
-                    <HorizontalStackLayout WidthRequest="900" HeightRequest="70" Padding="25" Spacing="75">
-                        <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="Start"  WidthRequest="100" Text="810 666 7799"/>
-                        <Label TextColor="{x:StaticResource BankrWhite}" HorizontalTextAlignment="Center" WidthRequest="100" Text="MATT"/>
-                        <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="Center" WidthRequest="100" Text="PRESTON"/>
-                        <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="Center" WidthRequest="100" Text="ADMIN"/>
-                                <Label TextColor="{x:StaticResource BankrNeonPink}"  HorizontalTextAlignment="End" WidthRequest="100" Text="EDIT"/>
-                    </HorizontalStackLayout>
-                    <HorizontalStackLayout WidthRequest="900" HeightRequest="70" Padding="25" Spacing="75">
-                        <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="Start"  WidthRequest="100" Text="011 909 6779"/>
-                        <Label TextColor="{x:StaticResource BankrWhite}" HorizontalTextAlignment="Center" WidthRequest="100" Text="GEORGE"/>
-                        <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="Center" WidthRequest="100" Text="DELACRUZ"/>
-                        <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="Center" WidthRequest="100" Text="ADMIN"/>
-                                <Label TextColor="{x:StaticResource BankrNeonPink}"  HorizontalTextAlignment="End" WidthRequest="100" Text="EDIT"/>
-                    </HorizontalStackLayout>
-                    <HorizontalStackLayout WidthRequest="900" HeightRequest="70" Padding="25" Spacing="75">
-                        <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="Start"  WidthRequest="100" Text="120 555 9559"/>
-                        <Label TextColor="{x:StaticResource BankrWhite}" HorizontalTextAlignment="Center" WidthRequest="100" Text="ANNIE"/>
-                        <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="Center" WidthRequest="100" Text="FINTON"/>
-                        <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="Center" WidthRequest="100" Text="MANAGER"/>
-                                <Label TextColor="{x:StaticResource BankrNeonPink}"  HorizontalTextAlignment="End" WidthRequest="100" Text="EDIT"/>
-                    </HorizontalStackLayout>
-                    <HorizontalStackLayout WidthRequest="900" HeightRequest="70" Padding="25" Spacing="75">
-                        <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="Start"  WidthRequest="100" Text="018 929 9112"/>
-                        <Label TextColor="{x:StaticResource BankrWhite}" HorizontalTextAlignment="Center" WidthRequest="100" Text="JOHN"/>
-                        <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="Center" WidthRequest="100" Text="CONNER"/>
-                        <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="Center" WidthRequest="100" Text="MANAGER"/>
-                                <Label TextColor="{x:StaticResource BankrNeonPink}"  HorizontalTextAlignment="End" WidthRequest="100" Text="EDIT"/>
-                    </HorizontalStackLayout>
 
-                    <HorizontalStackLayout WidthRequest="900" HeightRequest="70" Padding="25" Spacing="75">
-                        <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="Start"  WidthRequest="100" Text="076 999 0606"/>
-                        <Label TextColor="{x:StaticResource BankrWhite}" HorizontalTextAlignment="Center" WidthRequest="100" Text="SARAH"/>
-                        <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="Center" WidthRequest="100" Text="CONNER"/>
-                        <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="Center" WidthRequest="100" Text="MANAGER"/>
-                                <Label TextColor="{x:StaticResource BankrNeonPink}"  HorizontalTextAlignment="End" WidthRequest="100" Text="EDIT"/>
-                    </HorizontalStackLayout>
-                        </VerticalStackLayout>
-                    </ScrollView>
+
+
+                    </ListView>
 
                     <HorizontalStackLayout  WidthRequest="900" BackgroundColor="{x:StaticResource BankrBlack}" HeightRequest="75">
 

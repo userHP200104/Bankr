@@ -13,7 +13,7 @@ public partial class AddPersonView : ContentPage
 	{
 		string name = entryname.Text;
 		string surname=entrysurname.Text;
-		string role=entryrole.Text;
+		string role=entryrole.SelectedItem.ToString();
 
 		var people = new People() { name = name, surname=surname, role=role };
 		Console.WriteLine(people);

@@ -47,6 +47,13 @@
 
 	<ItemGroup>
 	  <None Remove="Resources\Images\backdrop.svg" />
+	  <None Remove="UnderlineView\" />
+	  <None Remove="Model\" />
+	  <None Remove="sqlite-net-pcl" />
+	  <None Remove="CommunityToolkit.Mvvm" />
+	  <None Remove="Microsoft.Toolkit.Mvvm" />
+	  <None Remove="Services\" />
+	  <None Remove="ViewModels\" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -70,4 +77,15 @@
 	  </MauiXaml>
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Folder Include="UnderlineView\" />
+	  <Folder Include="Model\" />
+	  <Folder Include="Services\" />
+	  <Folder Include="ViewModels\" />
+	</ItemGroup>
+	<ItemGroup>
+	  <PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
+	  <PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0" />
+	  <PackageReference Include="Microsoft.Toolkit.Mvvm" Version="7.1.2" />
+	</ItemGroup>
 </Project>

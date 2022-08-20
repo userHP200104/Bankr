@@ -9,7 +9,7 @@ public partial class Accounts : ContentPage
 
     private async void GoToAccount(object sender, EventArgs e)
     {
-        await Shell.Current.GoToAsync("//Account");
+        await Shell.Current.GoToAsync("//SingleAccount");
 
     }
 }

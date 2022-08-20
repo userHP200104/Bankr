@@ -1,4 +1,8 @@
-﻿namespace Bankr;
+﻿using Bankr.Services;
+using Bankr.ViewModels;
+using Bankr.Views;
+
+namespace Bankr;
 
 public static class MauiProgram
 {
@@ -22,7 +26,29 @@ public static class MauiProgram
 				
 			});
 
-		return builder.Build();
+        // View & VeiwsModel
+
+        builder.Services.AddSingleton<Home>();
+        builder.Services.AddSingleton<Login>();
+
+        builder.Services.AddSingleton<SingleAccount>();
+        builder.Services.AddSingleton<AccountViewModel>();
+
+        //builder.Services.AddSingleton<Accounts>();
+        builder.Services.AddSingleton<Staff>();
+        builder.Services.AddSingleton<UserViewModel>();
+
+        builder.Services.AddSingleton<Funds>();
+        builder.Services.AddSingleton<TransactionViewModel>();
+
+        //DB Repo's
+
+        string userDbPath = FileAccessHelper.GetLocalFielPath("projectDatabase.db3");
+        builder.Services.AddSingleton<UserRepository>(s => ActivatorUtilities.CreateInstance<UserRepository>(s, userDbPath));
+        builder.Services.AddSingleton<AccountRepository>(s => ActivatorUtilities.CreateInstance<AccountRepository>(s, userDbPath));
+        builder.Services.AddSingleton<TransactionRepository>(s => ActivatorUtilities.CreateInstance<TransactionRepository>(s, userDbPath));
+
+        return builder.Build();
 	}
 }
 

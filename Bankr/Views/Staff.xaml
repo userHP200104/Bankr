@@ -1,12 +1,12 @@
 ﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Bankr.Views.Staff"
-             Title="SingleAccount"
+             Title="Staff"
              BackgroundImageSource="backdrop.png"
              BackgroundColor="{x:StaticResource BankrBlack}">
-<Grid RowDefinitions="100, *, 132" ColumnDefinitions="*" Padding="120,100">
+    <Grid RowDefinitions="100, *, 132" ColumnDefinitions="*" Padding="120,100">
 
-    <!--Table Headers-->
+        <!--Table Headers-->
 
         <Frame
             BackgroundColor="{x:StaticResource BankrBlack}"

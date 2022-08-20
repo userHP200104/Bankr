@@ -1,7 +1,9 @@
 ﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Bankr.Views.Accounts"
-             Title="SingleAccount"
+             Title="Clients"
+             xmlns:viewmodel="clr-namespace:Bankr.ViewModels"
+             x:DataType="viewmodel:UserViewModel"
              BackgroundImageSource="backdrop.png"
              BackgroundColor="{x:StaticResource BankrBlack}">
 
@@ -65,7 +67,7 @@
 
                     <Label TextColor="{x:StaticResource BankrWhite}" Text="R10,132,432.00" FontSize="20" FontFamily="SFProDisplaySemibold" HorizontalTextAlignment="Start" TextTransform="Uppercase" CharacterSpacing="4.8" WidthRequest="500" Padding="128, 0"/>
 
-                    <Label TextColor="{x:StaticResource BankrYellow}" Text="open" FontSize="20" FontFamily="SFProDisplaySemibold" HorizontalTextAlignment="Center" TextTransform="Uppercase" CharacterSpacing="4.8" WidthRequest="500"/>
+                    <Button BackgroundColor="Transparent" TextColor="{x:StaticResource BankrYellow}" Text="open" FontSize="20" FontFamily="SFProDisplaySemibold" HorizontalOptions="Center" TextTransform="Uppercase" CharacterSpacing="4.8" WidthRequest="500" Clicked="GoToAccount"/>
 
                 </FlexLayout>
 

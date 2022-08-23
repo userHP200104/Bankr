@@ -19,12 +19,12 @@
         />
     </FlyoutItem>
 
-    <FlyoutItem Title="Customers"
+    <FlyoutItem Title="Clients"
                 >
 
             <ShellContent
             ContentTemplate="{DataTemplate local:Views.Customers}"
-            Route="Customers" 
+            Route="Clients" 
         />
 
 

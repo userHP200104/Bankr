@@ -28,10 +28,9 @@
 
                     <HorizontalStackLayout Margin="0,0,0,10" WidthRequest="900" HeightRequest="90" Padding="35" Spacing="75" BackgroundColor="{x:StaticResource BankrBlack}">
 
-                        <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="Start"  WidthRequest="125" Text="CLIENT ID"/>
-                        <Label TextColor="{x:StaticResource BankrWhite}" HorizontalTextAlignment="Center" WidthRequest="125" Text="FIRST NAME"/>
-                        <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="Center" WidthRequest="125" Text="LAST NAME"/>
-                        <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="End" WidthRequest="125" Text=""/>
+                        <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="Start"  WidthRequest="200" Text="CLIENT ID"/>
+                        <Label TextColor="{x:StaticResource BankrWhite}" HorizontalTextAlignment="Center" WidthRequest="200" Text="FIRST NAME"/>
+                        <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="End" WidthRequest="200" Text="LAST NAME"/>
                         <HorizontalStackLayout.Shadow>
                             <Shadow
                             Brush="black"
@@ -46,10 +45,10 @@
                         <CollectionView.ItemTemplate>
                             <DataTemplate>
                                 <HorizontalStackLayout WidthRequest="900" HeightRequest="70" Padding="25" Spacing="75">
-                                    <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="Start"  WidthRequest="125" Text="{Binding Id}"/>
-                                    <Label TextColor="{x:StaticResource BankrWhite}" HorizontalTextAlignment="Center" WidthRequest="125" Text="{Binding Name}"/>
-                                    <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="Center" WidthRequest="125" Text="{Binding Surname}"/>
-                                    <Label TextColor="{x:StaticResource BankrNeonPink}"  HorizontalTextAlignment="End" WidthRequest="125" Text="EDIT"/>
+                                    <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="Start"  WidthRequest="200" Text="{Binding Id}"/>
+                                    <Label TextColor="{x:StaticResource BankrWhite}" HorizontalTextAlignment="Center" WidthRequest="200" Text="{Binding Name}"/>
+                                    <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="End" WidthRequest="200" Text="{Binding Surname}"/>
+                                    
                                 </HorizontalStackLayout>
                             </DataTemplate>
                         </CollectionView.ItemTemplate>
@@ -60,7 +59,7 @@
                     </CollectionView>
 
                     <HorizontalStackLayout  WidthRequest="900" BackgroundColor="{x:StaticResource BankrBlack}" HeightRequest="75">
-
+                        
                         <Label  VerticalOptions="Center"  WidthRequest="850" HorizontalTextAlignment="Center" TextColor="{x:StaticResource BankrWhite}" Opacity="0.2" FontAttributes="Bold" FontSize="Medium">CLIENTS</Label>
                         <Button   VerticalOptions="Center"  WidthRequest="50" BackgroundColor="{x:StaticResource BankrBlack}" TextColor="{x:StaticResource BankrNeonBlue}" Opacity="1" FontAttributes="Bold" FontSize="Large" Text="+" Clicked="OnAddClicked"></Button>
                         <HorizontalStackLayout.Shadow>

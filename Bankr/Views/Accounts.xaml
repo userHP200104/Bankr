@@ -61,9 +61,9 @@
                     </ListView>
 
                     <HorizontalStackLayout  WidthRequest="900" BackgroundColor="{x:StaticResource BankrBlack}" HeightRequest="75">
-
-                        <Label  x:Name="ClientName" VerticalOptions="Center"  WidthRequest="850" HorizontalTextAlignment="Center" TextColor="{x:StaticResource BankrWhite}" Opacity="0.2" FontAttributes="Bold" FontSize="Medium"></Label>
-                        <Button   VerticalOptions="Center"  WidthRequest="50" BackgroundColor="{x:StaticResource BankrBlack}" TextColor="{x:StaticResource BankrNeonBlue}" Opacity="1" FontAttributes="Bold" FontSize="Large" Text="+" Clicked="OnAddClicked"></Button>
+                        <Button  BackgroundColor="{x:StaticResource BankrBlack}" TextColor="{x:StaticResource BankrNeonPink}"   HeightRequest="75" WidthRequest="100" Text="EDIT"/>
+                        <Label  x:Name="ClientName" VerticalOptions="Center"  WidthRequest="700" HorizontalTextAlignment="Center" TextColor="{x:StaticResource BankrWhite}" Opacity="0.7" FontAttributes="Bold" FontSize="Medium"></Label>
+                        <Button   VerticalOptions="Center"  WidthRequest="100" BackgroundColor="{x:StaticResource BankrBlack}" TextColor="{x:StaticResource BankrNeonBlue}" Opacity="1" FontAttributes="Bold" FontSize="Large" Text="+" Clicked="OnAddClicked"></Button>
                         <HorizontalStackLayout.Shadow>
                             <Shadow
                             Brush="black"

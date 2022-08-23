@@ -28,11 +28,10 @@
 
                     <HorizontalStackLayout Margin="0,0,0,10" WidthRequest="900" HeightRequest="90" Padding="35" Spacing="75" BackgroundColor="{x:StaticResource BankrBlack}">
 
-                        <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="Start"  WidthRequest="100" Text="STAFF ID"/>
-                        <Label TextColor="{x:StaticResource BankrWhite}" HorizontalTextAlignment="Center" WidthRequest="100" Text="FIRST NAME"/>
-                        <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="Center" WidthRequest="100" Text="LAST NAME"/>
-                        <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="Center" WidthRequest="100" Text="ROLE"/>
-                        <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="End" WidthRequest="100" Text="EDIT"/>
+                        <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="Start"  WidthRequest="150" Text="STAFF ID"/>
+                        <Label TextColor="{x:StaticResource BankrWhite}" HorizontalTextAlignment="Center" WidthRequest="150" Text="FIRST NAME"/>
+                        <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="Center" WidthRequest="150" Text="LAST NAME"/>
+                        <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="End" WidthRequest="150" Text="ROLE"/>
                         <HorizontalStackLayout.Shadow>
                             <Shadow
                             Brush="black"
@@ -43,25 +42,22 @@
                         </HorizontalStackLayout.Shadow>
                     </HorizontalStackLayout>
 
-                    <ListView x:Name="listView" HeightRequest="530" BackgroundColor="{x:StaticResource BankrBlack}">
-                        <ListView.ItemTemplate>
+                    <CollectionView x:Name="listView" HeightRequest="530" BackgroundColor="{x:StaticResource BankrBlack}">
+                        <CollectionView.ItemTemplate>
                             <DataTemplate >
-                                <ViewCell>
-                                    <HorizontalStackLayout WidthRequest="900" HeightRequest="70" Padding="25" Spacing="75">
-                                        <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="Start"  WidthRequest="100" Text="{Binding Id}"/>
-                                        <Label TextColor="{x:StaticResource BankrWhite}" HorizontalTextAlignment="Center" WidthRequest="100" Text="{Binding Name}"/>
-                                        <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="Center" WidthRequest="100" Text="{Binding Surname}"/>
-                                        <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="Center" WidthRequest="100" Text="{Binding Role}"/>
-                                        <Label TextColor="{x:StaticResource BankrNeonPink}"  HorizontalTextAlignment="End" WidthRequest="100" Text="EDIT"/>
-                                    </HorizontalStackLayout>
-                                </ViewCell>
+                                <HorizontalStackLayout WidthRequest="900" HeightRequest="70" Padding="25" Spacing="75">
+                                    <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="Start"  WidthRequest="150" Text="{Binding Id}"/>
+                                    <Label TextColor="{x:StaticResource BankrWhite}" HorizontalTextAlignment="Center" WidthRequest="150" Text="{Binding Name}"/>
+                                    <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="Center" WidthRequest="150" Text="{Binding Surname}"/>
+                                    <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="End" WidthRequest="150" Text="{Binding Role}"/>
+                                </HorizontalStackLayout>
                             </DataTemplate>
-                        </ListView.ItemTemplate>
+                        </CollectionView.ItemTemplate>
 
 
 
 
-                    </ListView>
+                    </CollectionView>
 
                     <HorizontalStackLayout  WidthRequest="900" BackgroundColor="{x:StaticResource BankrBlack}" HeightRequest="75">
 

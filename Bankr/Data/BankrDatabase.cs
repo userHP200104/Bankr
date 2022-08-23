@@ -19,6 +19,7 @@ namespace Bankr.Data
                 try
                 {
                     CreateTableResult result = await Database.CreateTableAsync<People>();
+                    CreateTableResult resultAccounts = await Database.CreateTableAsync<Account>();
                 }
                 catch (Exception ex)
                 {
@@ -32,19 +33,28 @@ namespace Bankr.Data
             Database= new SQLiteAsyncConnection(Constants.DatabasePath, Constants.Flags);
         }
 
-        public Task<List<People>> GetPeopleAsync()
+        public Task<List<People>> GetStaffAsync()
         {
-            return Database.Table<People>().ToListAsync();
+            return Database.QueryAsync<People>("SELECT * FROM [people] WHERE NOT [Role]='Customer'");
         }
 
+        public Task<List<People>> GetCustomersAsync()
+        {
+            return Database.QueryAsync<People>("SELECT * FROM [people] WHERE [Role]='Customer'");
+        }
+
+         public Task<People> GetPeopleFromIdAsync(int id)
+        {
+          return Database.Table<People>().Where(i => i.Id == id).FirstOrDefaultAsync();
+        }
         //public Task<List<People>> GetCustomers()
         //{
-          //  return Database.QueryAsync<People>("SELECT * FROM [people] WHERE [Role]=Customer");
+        //  return Database.QueryAsync<People>("SELECT * FROM [people] WHERE [Role]=Customer");
         //}
 
-       // public Task<People> GetPeopleAsync(int id)
+        // public Task<People> GetPeopleAsync(int id)
         //{
-          //  return Database.Table<People>().Where(i => i.Id == id).FirstOrDefaultAsync();
+        //  return Database.Table<People>().Where(i => i.Id == id).FirstOrDefaultAsync();
         //}
 
         public Task<int> SavePeopleAsync(People item)
@@ -56,6 +66,17 @@ namespace Bankr.Data
         public Task<int> DeletePeopleAsync(People item)
         {
             return Database.DeleteAsync(item);
+        }
+
+        public Task<List<Account>> GetAccountsAsync(string client_id)
+        {
+            return Database.QueryAsync<Account>("SELECT * FROM [account] WHERE [ClientId]='"+client_id+"'");
+        }
+        public Task<int> SaveAccountAsync(Account item)
+        {
+
+            return Database.InsertAsync(item);
+
         }
     }
 }

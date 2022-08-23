@@ -1,9 +1,9 @@
 namespace Bankr.Views;
 using Bankr.Data;
 using Bankr.Model;
-public partial class AddPersonView : ContentPage
+public partial class AddStaffView : ContentPage
 {
-	public AddPersonView()
+	public AddStaffView()
 	{
 		//BindingContext = bankrDatabase;
 		InitializeComponent();

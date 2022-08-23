@@ -4,23 +4,28 @@ using SQLite;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace Bankr.Model
 {
-    [Table("account")]
-    public class AccountModel
+   // [Table("account")]
+    public partial class Account : ObservableObject
     {
         [PrimaryKey, AutoIncrement, Column("_id")]
         public int Id { get; set; }
-        
-        public float Balance { get; set; }
 
-        public float Interest { get; set; }
-
-        public float TransFee { get; set; }
-        public string AccountType { get; set; }
-
-        public int Owner_id { get; set; }
+        [ObservableProperty]
+        public double balance;
+        [ObservableProperty]
+        public int freeTransactions;
+        [ObservableProperty]
+        public double interest;
+        [ObservableProperty]
+        public double transFee;
+        [ObservableProperty]
+        public string accountType;
+        [ObservableProperty]
+        public int clientId;
     }
 
     

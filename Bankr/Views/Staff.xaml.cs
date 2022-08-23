@@ -13,11 +13,11 @@ public partial class Staff : ContentPage
 	{
 		base.OnAppearing();
 		BankrDatabase database = await BankrDatabase.Instance;
-		listView.ItemsSource = await database.GetPeopleAsync();
+		listView.ItemsSource = await database.GetStaffAsync();
 	}
     private async void OnAddClicked(object sender, EventArgs e)
     {
-        await Shell.Current.GoToAsync("//AddPerson");
+        await Shell.Current.GoToAsync("//AddStaff");
 
     }
 }

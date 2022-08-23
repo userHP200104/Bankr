@@ -10,15 +10,6 @@
     Shell.NavBarIsVisible="False"
     >
 
-    <FlyoutItem Title="Accounts" >
-
-        <ShellContent
-                
-                ContentTemplate="{DataTemplate local:Views.Accounts}"
-                Route="ProfilePage" 
-                
-            />
-    </FlyoutItem>
     <FlyoutItem Title="Staff"
                 >
 
@@ -26,8 +17,18 @@
             ContentTemplate="{DataTemplate local:Views.Staff}"
             Route="Staff" 
         />
-
     </FlyoutItem>
+
+    <FlyoutItem Title="Customers"
+                >
+
+            <ShellContent
+            ContentTemplate="{DataTemplate local:Views.Customers}"
+            Route="Customers" 
+        />
+
+
+        </FlyoutItem>
 
     <ShellContent
         FlyoutItemIsVisible="False"
@@ -35,8 +36,23 @@
         Route="Account"></ShellContent>
     <ShellContent
         FlyoutItemIsVisible="False"
-        ContentTemplate="{DataTemplate local:Views.AddPersonView}"
-        Route="AddPerson" />
+        ContentTemplate="{DataTemplate local:Views.AddStaffView}"
+        Route="AddStaff" />
+    <ShellContent
+        FlyoutItemIsVisible="False"
+        ContentTemplate="{DataTemplate local:Views.AddCustomerView}"
+        Route="AddCustomer" />
+    <ShellContent
+        FlyoutItemIsVisible="False"     
+        ContentTemplate="{DataTemplate local:Views.Accounts}"
+        Route="Accounts" 
+            />
+    <ShellContent
+        FlyoutItemIsVisible="False"     
+        ContentTemplate="{DataTemplate local:Views.AddAccountView}"
+        Route="AddAccount" 
+            />
+
 
 </Shell>
 

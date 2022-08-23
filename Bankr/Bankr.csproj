@@ -55,7 +55,16 @@
 	  <MauiXaml Update="Views\Accounts.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\AddPersonView.xaml">
+	  <MauiXaml Update="Views\AddAccountView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\AddCustomerView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\AddStaffView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Customers.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\SingleAccount.xaml">
@@ -73,6 +82,12 @@
 	<ItemGroup>
 	  <PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0" />
 	  <PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="Views\AddStaffView.xaml.cs">
+	    <DependentUpon>AddStaffView.xaml</DependentUpon>
+	  </Compile>
 	</ItemGroup>
 
 </Project>

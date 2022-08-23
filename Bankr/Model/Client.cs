@@ -3,13 +3,12 @@ using SQLite;
 
 namespace Bankr.Model
 {
-    [Table("user")]
 
-    public class User
-	{
+    public class Client
+    {
         //Properties = values class
         [PrimaryKey, AutoIncrement]
-        public int UserId { get; set; }
+        public int ClientId { get; set; }
 
         [MaxLength(250)]
         public string Name { get; set; }

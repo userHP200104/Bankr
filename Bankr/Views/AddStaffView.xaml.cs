@@ -1,25 +1,22 @@
 namespace Bankr.Views;
-using Bankr.Data;
+//using Bankr.Data;
+using Bankr.Service;
 using Bankr.Model;
+using Bankr.ViewModels;
+
 public partial class AddStaffView : ContentPage
 {
-	public AddStaffView()
-	{
-		//BindingContext = bankrDatabase;
-		InitializeComponent();
-	}
+    StaffViewModel vm = new StaffViewModel();
+    public AddStaffView()
+    {
+        InitializeComponent();
+        //use our viewModel to bind data on this View
+        BindingContext = vm;
 
-	async void OnSaveClicked(object sender, EventArgs e )
-	{
-		string name = entryname.Text;
-		string surname=entrysurname.Text;
-		string role=entryrole.SelectedItem.ToString();
-
-		var people = new People() { name = name, surname=surname, role=role };
-		Console.WriteLine(people);
-		BankrDatabase database=await BankrDatabase.Instance;
-
-		await database.SavePeopleAsync(people);
+    }
+    async void  AddStaffClicked(object sender, EventArgs e)
+    {
+        vm.AddStaff();
         await Shell.Current.GoToAsync("//Staff");
     }
 }

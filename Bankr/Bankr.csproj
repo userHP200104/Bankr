@@ -58,19 +58,19 @@
 	  <MauiXaml Update="Views\AddAccountView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\AddCustomerView.xaml">
+	  <MauiXaml Update="Views\AddClientView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\AddStaffView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\Customers.xaml">
+	  <MauiXaml Update="Views\ClientView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\SingleAccount.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\Staff.xaml">
+	  <MauiXaml Update="Views\StaffView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
@@ -85,8 +85,14 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="Views\AddClientView.xaml.cs">
+	    <DependentUpon>AddClientView.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="Views\AddStaffView.xaml.cs">
 	    <DependentUpon>AddStaffView.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\ClientView.xaml.cs">
+	    <DependentUpon>ClientView.xaml</DependentUpon>
 	  </Compile>
 	</ItemGroup>
 

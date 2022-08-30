@@ -33,6 +33,8 @@ public partial class AddAccountView : ContentPage
         int freeTrans=0;
         double interest=0;
 
+        //Info Block based on account selected
+
         if (accounttype == "Gold Cheque") {
             transFee = 15.00;
             freeTrans = 10;

@@ -14,7 +14,7 @@
                 >
 
         <ShellContent
-            ContentTemplate="{DataTemplate local:Views.Staff}"
+            ContentTemplate="{DataTemplate local:Views.StaffView}"
             Route="Staff" 
         />
     </FlyoutItem>
@@ -23,7 +23,7 @@
                 >
 
             <ShellContent
-            ContentTemplate="{DataTemplate local:Views.Customers}"
+            ContentTemplate="{DataTemplate local:Views.ClientView}"
             Route="Clients" 
         />
 
@@ -40,7 +40,7 @@
         Route="AddStaff" />
     <ShellContent
         FlyoutItemIsVisible="False"
-        ContentTemplate="{DataTemplate local:Views.AddCustomerView}"
+        ContentTemplate="{DataTemplate local:Views.AddClientView}"
         Route="AddCustomer" />
     <ShellContent
         FlyoutItemIsVisible="False"     

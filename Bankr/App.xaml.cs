@@ -1,12 +1,21 @@
 ﻿namespace Bankr;
+using Bankr.Service;
 
 public partial class App : Application
 {
-	public App()
-	{
-		InitializeComponent();
+    public static ClientRepository ClientRepo { get; private set; }
+    public static StaffRepository StaffRepo { get; private set; }
 
-		MainPage = new AppShell();
-	}
+
+    public App(ClientRepository clientRepo, StaffRepository staffRepo)
+    {
+        InitializeComponent();
+
+        MainPage = new AppShell();
+
+        //Initialising our user repo
+        ClientRepo = clientRepo;
+        StaffRepo = staffRepo;
+
+    }
 }
-

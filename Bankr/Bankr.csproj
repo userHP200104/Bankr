@@ -70,6 +70,9 @@
 	  <MauiXaml Update="Views\SingleAccount.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\StaffDetailView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\StaffView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -93,6 +96,9 @@
 	  </Compile>
 	  <Compile Update="Views\ClientView.xaml.cs">
 	    <DependentUpon>ClientView.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\StaffDetailView.xaml.cs">
+	    <DependentUpon>StaffDetailView.xaml</DependentUpon>
 	  </Compile>
 	</ItemGroup>
 

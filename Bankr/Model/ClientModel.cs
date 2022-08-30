@@ -14,14 +14,12 @@ namespace Bankr.Model
         [PrimaryKey, AutoIncrement, Column("_id")]
         public int Id { get; set; }
 
-        [ObservableProperty]
-        public string name;
 
-        [ObservableProperty]
-        public string surname;
+        public string Name { get; set; }
 
-        [ObservableProperty]
-        public string role;
+
+        public string Surname { get; set; }
+
 
         //public string Password { get; set; }
 

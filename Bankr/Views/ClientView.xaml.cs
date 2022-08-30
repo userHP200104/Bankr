@@ -35,7 +35,7 @@ public partial class ClientView : ContentPage
 
     private async void OnAccountClicked(object sender, SelectionChangedEventArgs e)
     {
-        string clientid = (e.CurrentSelection.FirstOrDefault() as People)?.Id.ToString();
+        string clientid = (e.CurrentSelection.FirstOrDefault() as Client)?.Id.ToString();
 
         await Navigation.PushAsync(new Accounts
         {

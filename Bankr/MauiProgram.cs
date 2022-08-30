@@ -21,6 +21,8 @@ public static class MauiProgram
         builder.Services.AddSingleton<StaffView>();
         builder.Services.AddSingleton<StaffViewModel>();
 
+        builder.Services.AddSingleton<StaffDetailView>();
+
         builder.Services.AddSingleton<ClientView>();
         builder.Services.AddSingleton<ClientViewModel>();
 

@@ -32,4 +32,14 @@ public partial class StaffView : ContentPage
         await Navigation.PushAsync(new AddStaffView { });
 
     }
+
+    private async void OnStaffClicked(object sender, SelectionChangedEventArgs e)
+    {
+        string staffid = (e.CurrentSelection.FirstOrDefault() as Staff)?.Id.ToString();
+
+        await Navigation.PushAsync(new StaffDetailView
+        {
+            BindingContext = staffid
+        });
+    }
 }

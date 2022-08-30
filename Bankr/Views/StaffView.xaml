@@ -42,10 +42,9 @@
                         </HorizontalStackLayout.Shadow>
                     </HorizontalStackLayout>
 
-                    <RefreshView IsRefreshing="{Binding IsRefreshing}"
-                                 Command="{Binding RefreshCommand}">
 
-                    <CollectionView HeightRequest="530" BackgroundColor="{x:StaticResource BankrBlack}" x:Name="StaffCollection">
+
+                        <CollectionView SelectionMode="Single" HeightRequest="530" BackgroundColor="{x:StaticResource BankrBlack}" x:Name="StaffCollection" SelectionChanged="OnStaffClicked">
                         <CollectionView.ItemTemplate>
                             <DataTemplate >
                                 <HorizontalStackLayout WidthRequest="900" HeightRequest="70" Padding="25" Spacing="75">
@@ -57,7 +56,7 @@
                             </DataTemplate>
                         </CollectionView.ItemTemplate>
                     </CollectionView>
-                    </RefreshView>
+
 
 
                     <HorizontalStackLayout  WidthRequest="900" BackgroundColor="{x:StaticResource BankrBlack}" HeightRequest="75">

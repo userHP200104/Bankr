@@ -88,6 +88,47 @@ namespace Bankr.Service
                 Debug.WriteLine(ex.Message);
             }
         }
+
+        public bool UpdateStaff(int id, string name, string surname, string role)
+        {
+            try
+            {
+                Init();
+
+                var staffMember = conn.Table<Staff>().Where(x => x.Id == id).FirstOrDefault();
+
+                if (staffMember != null)
+                {
+                    if (name != null)
+                    {
+                        staffMember.Name = name;
+                    }
+                    if (surname != null)
+                    {
+                        staffMember.Surname= surname;
+                    }
+                    if(role != null)
+                    {
+                        staffMember.Role= role;
+                    }
+                    var i = conn.Update(staffMember);
+
+                    if (i == -1)
+                    {
+                        Debug.WriteLine("Issue updating");
+                    }
+                    return true;
+                }
+                else { return false; }
+
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+                return false;
+            }
+
+        }
     }
 }
 

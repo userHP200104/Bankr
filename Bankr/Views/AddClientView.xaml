@@ -23,7 +23,7 @@
 			FontSize="Medium"
 			TextColor="{x:StaticResource BankrYellow}"
             Text="Name"  />
-            <Entry x:Name="entryname" x:DataType="x:String"
+            <Entry  Text="{Binding Name}"
                    BackgroundColor="{x:StaticResource BankrWhite}"
 				    TextColor="{x:StaticResource BankrDarkGray}"/>
 
@@ -32,7 +32,7 @@
 			FontSize="Medium"
 			TextColor="{x:StaticResource BankrYellow}"
             Text="Surname" />
-            <Entry x:Name="entrysurname" x:DataType="x:String"
+            <Entry Text="{Binding Surname}"
                    BackgroundColor="{x:StaticResource BankrWhite}"
 				    TextColor="{x:StaticResource BankrDarkGray}"/>
 

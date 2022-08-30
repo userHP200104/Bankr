@@ -88,5 +88,11 @@ namespace Bankr.ViewModels
             return Staffmembers.ToList();   
         }
 
+        public Staff GetStaffFromId(int id)
+        {
+            Staffmember = App.StaffRepo.GetStaffFromId(id);
+            return Staffmember;
+        }
+
     }
 }

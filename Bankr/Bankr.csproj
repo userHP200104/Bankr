@@ -46,63 +46,78 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Remove="Data\Database1.mdf" />
-	  <None Remove="Data\Database1_log.ldf" />
-	  <None Remove="Resources\Images\backdrop.svg" />
+	  <AndroidResource Remove="Services\**" />
+	  <AndroidResource Remove="UnderlineView\**" />
+	  <Compile Remove="Services\**" />
+	  <Compile Remove="UnderlineView\**" />
+	  <EmbeddedResource Remove="Services\**" />
+	  <EmbeddedResource Remove="UnderlineView\**" />
+	  <MauiCss Remove="Services\**" />
+	  <MauiCss Remove="UnderlineView\**" />
+	  <MauiXaml Remove="Services\**" />
+	  <MauiXaml Remove="UnderlineView\**" />
+	  <None Remove="Services\**" />
+	  <None Remove="UnderlineView\**" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="Views\Accounts.xaml">
+	  <None Remove="Resources\Images\backdrop.svg" />
+	  <None Remove="UnderlineView\" />
+	  <None Remove="Model\" />
+	  <None Remove="sqlite-net-pcl" />
+	  <None Remove="CommunityToolkit.Mvvm" />
+	  <None Remove="Microsoft.Toolkit.Mvvm" />
+	  <None Remove="Services\" />
+	  <None Remove="ViewModels\" />
+	  <None Remove="SQLitePCLRaw.bundle_green" />
+	  <None Remove="SQLitePCLRaw.core" />
+	  <None Remove="SQLitePCLRaw.provider.dynamic_cdecl" />
+	  <None Remove="SQLitePCLRaw.provider.sqlite3" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Views\AccountDetailView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\AddAccountView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Views\AddClientView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Views\AddStaffView.xaml">
+	  <MauiXaml Update="Views\AccountsView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\ClientDetailView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\ClientView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
 	  <MauiXaml Update="Views\SingleAccount.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\StaffDetailView.xaml">
+	  <MauiXaml Update="Views\Staff.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\StaffView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
+	  <MauiXaml Update="Views\Login.xaml">
+	    <SubType></SubType>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Home.xaml">
+	    <SubType></SubType>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Funds.xaml">
+	    <SubType></SubType>
 	  </MauiXaml>
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="NewFolder\" />
+	  <Folder Include="Model\" />
+	  <Folder Include="ViewModels\" />
 	</ItemGroup>
-
 	<ItemGroup>
-	  <PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0" />
 	  <PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
+	  <PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0" />
+	  <PackageReference Include="Microsoft.Toolkit.Mvvm" Version="7.1.2" />
+	  <PackageReference Include="SQLitePCLRaw.bundle_green" Version="2.1.0" />
+	  <PackageReference Include="SQLitePCLRaw.core" Version="2.1.0" />
+	  <PackageReference Include="SQLitePCLRaw.provider.dynamic_cdecl" Version="2.1.0" />
+	  <PackageReference Include="SQLitePCLRaw.provider.sqlite3" Version="2.1.0" />
 	</ItemGroup>
-
 	<ItemGroup>
-	  <Compile Update="Views\AddClientView.xaml.cs">
-	    <DependentUpon>AddClientView.xaml</DependentUpon>
-	  </Compile>
-	  <Compile Update="Views\AddStaffView.xaml.cs">
-	    <DependentUpon>AddStaffView.xaml</DependentUpon>
-	  </Compile>
-	  <Compile Update="Views\ClientView.xaml.cs">
-	    <DependentUpon>ClientView.xaml</DependentUpon>
-	  </Compile>
-	  <Compile Update="Views\StaffDetailView.xaml.cs">
-	    <DependentUpon>StaffDetailView.xaml</DependentUpon>
+	  <Compile Update="Views\AccountsView.xaml.cs">
+	    <DependentUpon>AccountsView.xaml</DependentUpon>
 	  </Compile>
 	</ItemGroup>
-
 </Project>

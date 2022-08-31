@@ -44,7 +44,7 @@
         Route="AddCustomer" />
     <ShellContent
         FlyoutItemIsVisible="False"     
-        ContentTemplate="{DataTemplate local:Views.Accounts}"
+        ContentTemplate="{DataTemplate local:Views.AccountsView}"
         Route="Accounts" 
             />
     <ShellContent

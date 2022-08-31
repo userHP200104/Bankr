@@ -37,7 +37,7 @@ public partial class ClientView : ContentPage
     {
         string clientid = (e.CurrentSelection.FirstOrDefault() as Client)?.Id.ToString();
 
-        await Navigation.PushAsync(new Accounts
+        await Navigation.PushAsync(new AccountsView
         {
             BindingContext = clientid
         });

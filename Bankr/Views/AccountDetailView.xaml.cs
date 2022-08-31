@@ -72,7 +72,7 @@ public partial class AccountDetailView : ContentPage
     {
         string AccountId = this.BindingContext.ToString();
 
-        await Navigation.PushAsync(new DepositView
+        await Navigation.PushAsync(new WithdrawView
         {
             BindingContext = AccountId
         });
@@ -81,7 +81,7 @@ public partial class AccountDetailView : ContentPage
     {
         string AccountId = this.BindingContext.ToString();
 
-        await Navigation.PushAsync(new DepositView
+        await Navigation.PushAsync(new TransferView
         {
             BindingContext = AccountId
         });

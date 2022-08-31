@@ -1,12 +1,13 @@
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using Bankr.Model;
+using CommunityToolkit.Mvvm.ComponentModel;
 using Microsoft.Maui.Graphics.Text;
 
 namespace Bankr.Views;
 
-public partial class DepositView : ContentPage
+public partial class TransferView : ContentPage
 {
-	public DepositView()
+	public TransferView()
 	{
 		InitializeComponent();
 	}
@@ -24,16 +25,22 @@ public partial class DepositView : ContentPage
         string AccountId = this.BindingContext.ToString();
         int accountid = int.Parse((string)AccountId);
 
-        double amount=double.Parse((string)AmountInput.Text);
+        double amount = double.Parse((string)AmountInput.Text);
+        int receivingAccountId = int.Parse((string)AccountIdInput.Text);
         Debug.WriteLine(amount);
         Transaction transaction = new Transaction()
         {
-            AccountOut = 0,
-            AccountIn = accountid,
+            AccountOut = accountid,
+            AccountIn = receivingAccountId,
             TransactionAmount = amount,
-            TransactionType="deposit"
+            TransactionType = "transfer"
         };
-        App.TransactionRepo.Deposit(transaction);
+
+        Debug.WriteLine("AccountIn" + transaction.AccountIn);
+        Debug.WriteLine("AccountOut" + transaction.AccountOut);
+        Debug.WriteLine("amount" + transaction.TransactionAmount);
+
+        App.TransactionRepo.Transfer(transaction);
         await Navigation.PopAsync();
     }
-    }
+}

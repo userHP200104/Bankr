@@ -33,7 +33,6 @@ public static class MauiProgram
         // builder.Services.AddSingleton<TodoViewModel>();
 
         builder.Services.AddSingleton<CreateTransactionView>();
-        builder.Services.AddSingleton<TransactionViewModel>();
 
 
         //DB Repos

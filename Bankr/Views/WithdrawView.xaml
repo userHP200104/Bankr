@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Bankr.Views.WithdrawView"
+             Title="WithdrawView"
+			 BackgroundImageSource="backdrop.png"
+             BackgroundColor="{x:StaticResource BankrBlack}">
+    <ContentPage.Content>
+        <VerticalStackLayout
+		WidthRequest="450"
+		HorizontalOptions="Center"
+		VerticalOptions="Start"
+		Margin="50"
+		>
+            <Label
+			FontAttributes="Bold"
+			FontSize="Large"
+			TextColor="{x:StaticResource BankrWhite}"
+			Text="Make a Withdrawal"/>
+            <Label 
+			Margin="0,20,0,0"
+			FontSize="Medium"
+			TextColor="{x:StaticResource BankrYellow}"
+            Text="Amount"  />
+            <Entry  x:Name="AmountInput"
+                   BackgroundColor="{x:StaticResource BankrWhite}"
+				    TextColor="{x:StaticResource BankrDarkGray}"/>
+
+
+
+            <Button 
+			WidthRequest="100"
+			Margin="0,20,0,0"
+			Clicked="OnEnterClicked" 
+			BackgroundColor="{x:StaticResource BankrYellow}" 
+			TextColor="{x:StaticResource BankrBlack}" 
+			Text="Enter"/>
+
+        </VerticalStackLayout>
+    </ContentPage.Content>
+</ContentPage>

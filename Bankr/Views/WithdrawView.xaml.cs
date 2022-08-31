@@ -1,12 +1,12 @@
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using Bankr.Model;
 using Microsoft.Maui.Graphics.Text;
 
 namespace Bankr.Views;
 
-public partial class DepositView : ContentPage
+public partial class WithdrawView : ContentPage
 {
-	public DepositView()
+	public WithdrawView()
 	{
 		InitializeComponent();
 	}
@@ -24,16 +24,16 @@ public partial class DepositView : ContentPage
         string AccountId = this.BindingContext.ToString();
         int accountid = int.Parse((string)AccountId);
 
-        double amount=double.Parse((string)AmountInput.Text);
+        double amount = double.Parse((string)AmountInput.Text);
         Debug.WriteLine(amount);
         Transaction transaction = new Transaction()
         {
-            AccountOut = 0,
-            AccountIn = accountid,
+            AccountOut = accountid,
+            AccountIn = 0,
             TransactionAmount = amount,
-            TransactionType="deposit"
+            TransactionType = "withdrawal"
         };
-        App.TransactionRepo.Deposit(transaction);
+        App.TransactionRepo.Withdrawal(transaction);
         await Navigation.PopAsync();
     }
-    }
+}

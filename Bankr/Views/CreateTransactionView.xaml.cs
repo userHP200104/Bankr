@@ -7,10 +7,9 @@ namespace Bankr.Views;
 public partial class CreateTransactionView : ContentPage
 {
 
-	public CreateTransactionView(TransactionViewModel vm)
+	public CreateTransactionView()
 	{
 		InitializeComponent();
-		BindingContext = vm;
 	}
 
 	protected override async void OnAppearing()

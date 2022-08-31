@@ -40,6 +40,7 @@ namespace Bankr.Service
                 Init(); //first connect
 
                 return conn.Table<Client>().ToList();
+                Debug.WriteLine("gots them peeps");
             }
             catch (SQLiteException ex)
             {

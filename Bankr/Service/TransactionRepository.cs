@@ -33,6 +33,25 @@ namespace Bankr.Service
             _dbPath = dbPath;
         }
 
+        public List<Transaction> GetTransactionsAsync(int id)
+        {
+            try
+            {
+                Init(); //first connect
+
+                return conn.Table<Transaction>().Where(i => i.AccountIn == id).ToList();
+
+                Debug.WriteLine("gots them");
+            }
+            catch (SQLiteException ex)
+            {
+                Debug.WriteLine(ex.Message);
+                Debug.WriteLine("dont gots them");
+            }
+
+            return new List<Transaction>();
+        }
+
         public void Withdrawal(Transaction item)
         {
             Account accountOut = App.AccountRepo.GetAccountFromId(item.AccountOut);

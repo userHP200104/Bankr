@@ -1,22 +1,25 @@
 namespace Bankr.Views;
 using Bankr.Data;
 using Bankr.Model;
+using Bankr.ViewModels;
+using Microsoft.Maui.Controls;
 
 
-//[QueryProperty(nameof(ClientId), "ClientId")]
+
 public partial class AccountDetailView : ContentPage
 {
-    //public string ClientId { get => ClientId; set { ClientId = value; OnPropertyChanged(); } }
-    public AccountDetailView()
-    {
-        InitializeComponent();
-        //BindingContext = this;
-    }
+
+    TransactionViewModel vm = new TransactionViewModel();
+
 
     protected override async void OnAppearing()
     {
         string AccountId = this.BindingContext.ToString();
         base.OnAppearing();
+        List<Transaction> transactions = App.TransactionRepo.GetTransactionsAsync(int.Parse(AccountId));
+
+        Transactions.ItemsSource = transactions;
+
         int accountid = int.Parse((string)AccountId);
         Account Account;
         Client Client;
@@ -50,6 +53,13 @@ public partial class AccountDetailView : ContentPage
         //listView.ItemsSource = await database.GetAccountsAsync(ClientId);
     }
 
+    public AccountDetailView()
+    {
+        InitializeComponent();
+        //BindingContext = this;
+        BindingContext = vm;
+    }
+
     private async void OnDeleteClicked(object sender, EventArgs e)
     {
         string AccountId = this.BindingContext.ToString();
@@ -67,6 +77,10 @@ public partial class AccountDetailView : ContentPage
         {
             BindingContext = AccountId
         }) ;
+
+        List<Transaction> transactions = App.TransactionRepo.GetTransactionsAsync(int.Parse(AccountId));
+
+        Transactions.ItemsSource = transactions;
     }
     private async void OnWithdrawClicked(object sender, EventArgs e)
     {
@@ -76,6 +90,10 @@ public partial class AccountDetailView : ContentPage
         {
             BindingContext = AccountId
         });
+
+        List<Transaction> transactions = App.TransactionRepo.GetTransactionsAsync(int.Parse(AccountId));
+
+        Transactions.ItemsSource = transactions;
     }
     private async void OnTransferClicked(object sender, EventArgs e)
     {
@@ -85,5 +103,9 @@ public partial class AccountDetailView : ContentPage
         {
             BindingContext = AccountId
         });
+
+        List<Transaction> transactions = App.TransactionRepo.GetTransactionsAsync(int.Parse(AccountId));
+
+        Transactions.ItemsSource = transactions;
     }
 }

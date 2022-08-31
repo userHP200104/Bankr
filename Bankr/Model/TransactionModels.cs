@@ -13,7 +13,6 @@ namespace Bankr.Model
     {
         [PrimaryKey, AutoIncrement, Column("_id")]
         public int Id { get; set; }
-
         public int AccountIn { get; set; }
         public int AccountOut { get; set; }
         public string TransactionType { get; set; }

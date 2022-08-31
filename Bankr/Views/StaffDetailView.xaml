@@ -5,9 +5,9 @@
              Title="StaffDetail"             
              BackgroundImageSource="backdrop.png"
              BackgroundColor="{x:StaticResource BankrBlack}">
-    <VerticalStackLayout WidthRequest="900" Margin="0,150" >
+    <VerticalStackLayout WidthRequest="900" Margin="0,110" >
 
-        <VerticalStackLayout HeightRequest="500"  BackgroundColor="{x:StaticResource BankrBlack}" Padding="0" IsClippedToBounds="True">
+        <VerticalStackLayout HeightRequest="550"  BackgroundColor="{x:StaticResource BankrBlack}" Padding="0" IsClippedToBounds="True">
             <VerticalStackLayout.Shadow>
                 <Shadow 
                             Brush="black"
@@ -16,7 +16,7 @@
                             Opacity=".5"/>
             </VerticalStackLayout.Shadow>
 
-            <Frame HeightRequest="500" BackgroundColor="{x:StaticResource BankrBlack}" Padding="0" HasShadow="True" BorderColor="{x:StaticResource BankrBlack}" IsClippedToBounds="True">
+            <Frame HeightRequest="550" BackgroundColor="{x:StaticResource BankrBlack}" Padding="0" HasShadow="True" BorderColor="{x:StaticResource BankrBlack}" IsClippedToBounds="True">
                 <Frame.Shadow>
                     <Shadow
                             Brush="black"
@@ -24,7 +24,7 @@
                             Radius="20"
                             Opacity=".5"/>
                 </Frame.Shadow>
-                <VerticalStackLayout HeightRequest="500"  Padding="0" BackgroundColor="{x:StaticResource BankrBlack}">
+                <VerticalStackLayout HeightRequest="550"  Padding="0" BackgroundColor="{x:StaticResource BankrBlack}">
 
                     <HorizontalStackLayout Padding="50,35,35,35" Margin="0,0,0,10" WidthRequest="900" BackgroundColor="{x:StaticResource BankrBlack}" HeightRequest="100">
                         <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="Start"  WidthRequest="75" Opacity="0.7" FontAttributes="Bold" FontSize="Medium" Text="Id:"/>
@@ -39,19 +39,31 @@
                         </HorizontalStackLayout.Shadow>
                     </HorizontalStackLayout>
 
-                    <HorizontalStackLayout Margin="0,0,0,10" WidthRequest="900" HeightRequest="90" Padding="275,35,35,35" Spacing="75" BackgroundColor="{x:StaticResource BankrDarkGray}">
+                    <HorizontalStackLayout Margin="0,0,0,10" WidthRequest="900" HeightRequest="100" Padding="275,35,35,35" Spacing="75" BackgroundColor="{x:StaticResource BankrDarkGray}">
                         <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="Start"  WidthRequest="200" Text="Name"/>
-                        <Entry TextColor="{x:StaticResource BankrWhite}" HorizontalTextAlignment="Center" WidthRequest="200" x:Name="Name"/>
+                        <Entry TextColor="{x:StaticResource BankrWhite}" HorizontalTextAlignment="Start" WidthRequest="200" x:Name="Name"/>
                     </HorizontalStackLayout>
 
-                    <HorizontalStackLayout Margin="0,0,0,10" WidthRequest="900" HeightRequest="90" Padding="275,35,35,35" Spacing="75" BackgroundColor="{x:StaticResource BankrDarkGray}">
+                    <HorizontalStackLayout Margin="0,0,0,10" WidthRequest="900" HeightRequest="100" Padding="275,35,35,35" Spacing="75" BackgroundColor="{x:StaticResource BankrDarkGray}">
                         <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="Start"  WidthRequest="200" Text="Surname"/>
-                        <Entry TextColor="{x:StaticResource BankrWhite}" HorizontalTextAlignment="Center" WidthRequest="200" x:Name="Surname"/>
+                        <Entry TextColor="{x:StaticResource BankrWhite}" HorizontalTextAlignment="Start" WidthRequest="200" x:Name="Surname"/>
                     </HorizontalStackLayout>
 
-                    <HorizontalStackLayout Margin="0,0,0,20" WidthRequest="900" HeightRequest="90" Padding="275,35,35,35" Spacing="75" BackgroundColor="{x:StaticResource BankrDarkGray}">
+                    <HorizontalStackLayout Margin="0,0,0,20" WidthRequest="900" HeightRequest="130" Padding="275,35,35,35" Spacing="75" BackgroundColor="{x:StaticResource BankrDarkGray}">
                         <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="Start"  WidthRequest="200" Text="Role"/>
-                        <Entry TextColor="{x:StaticResource BankrWhite}" HorizontalTextAlignment="Center" WidthRequest="200" x:Name="Role"/>
+                        <Picker x:Name="Role"
+                            TitleColor="{x:StaticResource BankrWhite}"
+                            TextColor="{x:StaticResource BankrBlack}"
+			                BackgroundColor="{x:StaticResource BankrLightGray}">
+                            <Picker.ItemsSource>
+                                <x:Array Type="{x:Type x:String}">
+                                    <x:String>Receptionist</x:String>
+                                    <x:String>Manager</x:String>
+                                    <x:String>Admin</x:String>
+                                </x:Array>
+                            </Picker.ItemsSource>
+                        </Picker>
+
                     </HorizontalStackLayout>
 
                     <HorizontalStackLayout  WidthRequest="900" BackgroundColor="{x:StaticResource BankrBlack}" HeightRequest="100">

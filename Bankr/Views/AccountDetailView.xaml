@@ -75,7 +75,7 @@
                     </CollectionView>
 
                     <HorizontalStackLayout Margin="0" VerticalOptions="End" BackgroundColor="{x:StaticResource BankrBlack}" HeightRequest="75">
-
+                        <Button  BackgroundColor="{x:StaticResource BankrBlack}" TextColor="{x:StaticResource BankrNeonPink}"   HeightRequest="75" WidthRequest="100" Text="Delete" Clicked="OnDeleteClicked"/>
                         <Label  x:Name="AccountType" VerticalOptions="Center"  WidthRequest="900" HorizontalTextAlignment="Center" TextColor="{x:StaticResource BankrWhite}" FontSize="Medium"></Label>
                         <HorizontalStackLayout.Shadow>
                             <Shadow

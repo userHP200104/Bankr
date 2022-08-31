@@ -58,16 +58,13 @@ public partial class AccountDetailView : ContentPage
         });
 
     }
-    private async void OnEditClicked(object sender, EventArgs e)
+    private async void OnDeleteClicked(object sender, EventArgs e)
     {
-        string ClientId = this.BindingContext.ToString();
-        int clientid = int.Parse((string)ClientId);
+        string AccountId = this.BindingContext.ToString();
+        int accountid = int.Parse((string)AccountId);
 
-        await Navigation.PushAsync(new ClientDetailView
-        {
-            BindingContext = clientid
-
-        });
+        App.AccountRepo.DeleteAccount(accountid);
+        Navigation.PopAsync();
     }
 
     private async void OnAccountClicked(object sender, SelectionChangedEventArgs e)

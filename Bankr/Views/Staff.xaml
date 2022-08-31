@@ -1,0 +1,97 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Bankr.Views.Staff"
+             Title="Staff"
+             BackgroundImageSource="backdrop.png"
+             BackgroundColor="{x:StaticResource BankrBlack}">
+    <Grid RowDefinitions="100, *, 132" ColumnDefinitions="*" Padding="120,100">
+
+        <!--Table Headers-->
+
+        <Frame
+            BackgroundColor="{x:StaticResource BankrBlack}"
+            BorderColor="Transparent"
+            HasShadow="True"
+            Grid.Row="0">
+
+            <Frame.Shadow>
+                <Shadow
+                    Brush="black"
+                    Offset="0,0"
+                    Radius="50"
+                    Opacity="1"/>
+
+            </Frame.Shadow>
+
+        </Frame>
+
+        <FlexLayout JustifyContent="SpaceAround" AlignItems="Center" Direction="Row" Grid.Row="0" HorizontalOptions="Center" VerticalOptions="Center">
+
+            <Label TextColor="{x:StaticResource BankrWhite}" Text="staff id" FontSize="20" FontFamily="SFProDisplaySemibold" HorizontalTextAlignment="Center" TextTransform="Uppercase" CharacterSpacing="4.8" WidthRequest="500" Margin="-20, 0"/>
+
+            <Label TextColor="{x:StaticResource BankrWhite}" Text="name" FontSize="20" FontFamily="SFProDisplaySemibold" HorizontalTextAlignment="Start" TextTransform="Uppercase" CharacterSpacing="4.8" WidthRequest="500" Padding="128, 0" Margin="20, 0"/>
+
+            <Label TextColor="{x:StaticResource BankrWhite}" Text="role" FontSize="20" FontFamily="SFProDisplaySemibold" HorizontalTextAlignment="Center" TextTransform="Uppercase" CharacterSpacing="4.8" WidthRequest="500"/>
+
+            <Label TextColor="{x:StaticResource BankrWhite}" Text="" FontSize="20" FontFamily="SFProDisplaySemibold" HorizontalTextAlignment="Center" TextTransform="Uppercase" CharacterSpacing="4.8" WidthRequest="500"/>
+
+        </FlexLayout>
+
+       <!--Transaction Details-->
+
+        <ScrollView Grid.Row="1">
+
+            <ScrollView.Shadow>
+                <Shadow
+                    Brush="black"
+                    Offset="10,10"
+                    Radius="70"
+                    Opacity="1"/>
+
+            </ScrollView.Shadow>
+
+            <VerticalStackLayout>
+
+                <FlexLayout JustifyContent="SpaceAround" AlignItems="Center" Direction="Row" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="100" BackgroundColor="{x:StaticResource BankrBlackTransparent}">
+
+                    <Label TextColor="{x:StaticResource BankrWhite}" Text="018392048305" FontSize="20" FontFamily="SFProDisplaySemibold" HorizontalTextAlignment="Center" TextTransform="Uppercase" CharacterSpacing="4.8" WidthRequest="500"/>
+
+                    <Label TextColor="{x:StaticResource BankrWhite}" Text="john conway" FontSize="20" FontFamily="SFProDisplaySemibold" HorizontalTextAlignment="Start" TextTransform="Uppercase" CharacterSpacing="4.8" WidthRequest="500"  Padding="128, 0"/>
+
+                    <Label TextColor="{x:StaticResource BankrWhite}" Text="admin" FontSize="20" FontFamily="SFProDisplaySemibold" HorizontalTextAlignment="Center" TextTransform="Uppercase" CharacterSpacing="4.8" WidthRequest="500"/>
+
+                    <Label TextColor="{x:StaticResource BankrYellow}" Text="edit" FontSize="20" FontFamily="SFProDisplaySemibold" HorizontalTextAlignment="Center" TextTransform="Uppercase" CharacterSpacing="4.8" WidthRequest="500"/>
+
+                </FlexLayout>
+
+            </VerticalStackLayout>
+
+        </ScrollView>
+
+       <!--Table Footer-->
+
+        <Frame
+            BackgroundColor="{x:StaticResource BankrBlack}"
+            BorderColor="Transparent"
+            HasShadow="True"
+            Grid.Row="2">
+
+            <Frame.Shadow>
+                <Shadow
+                    Brush="black"
+                    Offset="10,10"
+                    Radius="70"
+                    Opacity="1"/>
+
+            </Frame.Shadow>
+
+            <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+
+                <Label TextColor="{x:StaticResource BankrDarkGray}" Text="staff" FontSize="34" FontFamily="SFProDisplayMedium" HorizontalTextAlignment="Center" CharacterSpacing="12.8" TextTransform="Uppercase"/>
+
+            </HorizontalStackLayout>
+
+
+        </Frame>
+    </Grid>
+</ContentPage>

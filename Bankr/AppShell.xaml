@@ -5,55 +5,55 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:Bankr"
     Shell.FlyoutBehavior="Locked"
-    FlyoutWidth="150"
+    FlyoutWidth="170"
     FlyoutBackgroundColor="{x:StaticResource BankrBlack}"
     Shell.NavBarIsVisible="False"
     >
 
-    <FlyoutItem Title="Staff"
-                >
+        <Shell.FlyoutHeaderTemplate>
+                        <DataTemplate>
+                        <Grid RowDefinitions="300">
+                            <Image Source="bankr_logo.png"
+                                    VerticalOptions="Start"
+                                    HorizontalOptions="Center"
+                                    WidthRequest="40"
+                                    HeightRequest="140"
+                                    Margin="80"
+                            />
 
-        <ShellContent
-            ContentTemplate="{DataTemplate local:Views.StaffView}"
-            Route="Staff" 
-        />
-    </FlyoutItem>
+                        </Grid>
+                    </DataTemplate>
 
-    <FlyoutItem Title="Clients"
-                >
+        </Shell.FlyoutHeaderTemplate>
 
-            <ShellContent
-            ContentTemplate="{DataTemplate local:Views.ClientView}"
-            Route="Clients" 
-        />
+        <ShellContent ContentTemplate="{DataTemplate local:Views.Login}"
+                            Route="Login"
+                            Shell.FlyoutBehavior="Disabled"/>
 
-
+        <FlyoutItem Title="Home">
+                <ShellContent ContentTemplate="{DataTemplate local:Views.Home}"
+                                Route="Home"/>
         </FlyoutItem>
 
-    <ShellContent
-        FlyoutItemIsVisible="False"
-        ContentTemplate="{DataTemplate local:Views.SingleAccount}"
-        Route="Account"></ShellContent>
-    <ShellContent
-        FlyoutItemIsVisible="False"
-        ContentTemplate="{DataTemplate local:Views.AddStaffView}"
-        Route="AddStaff" />
-    <ShellContent
-        FlyoutItemIsVisible="False"
-        ContentTemplate="{DataTemplate local:Views.AddClientView}"
-        Route="AddCustomer" />
-    <ShellContent
-        FlyoutItemIsVisible="False"     
-        ContentTemplate="{DataTemplate local:Views.Accounts}"
-        Route="Accounts" 
-            />
-    <ShellContent
-        FlyoutItemIsVisible="False"     
-        ContentTemplate="{DataTemplate local:Views.AddAccountView}"
-        Route="AddAccount" 
-            />
 
+        <FlyoutItem Title="Clients">
+                <ShellContent ContentTemplate="{DataTemplate local:Views.Accounts}"
+                                Route="Accounts"/>
+        </FlyoutItem>
+
+        <FlyoutItem Title="Staff">
+                <ShellContent ContentTemplate="{DataTemplate local:Views.Staff}"
+                                Route="Staff"/>
+        </FlyoutItem>
+
+        <FlyoutItem Title="Funds">
+                <ShellContent ContentTemplate="{DataTemplate local:Views.Funds}"
+                                Route="Funds"/>
+        </FlyoutItem>
+
+        <ShellContent ContentTemplate="{DataTemplate local:Views.Login}"
+                                    Route="Login"
+                                    Title="Log Out"/>
 
 </Shell>
-
 

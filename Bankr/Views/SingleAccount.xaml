@@ -1,99 +1,137 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Bankr.Views.SingleAccount"
+             xmlns:viewmodel="clr-namespace:Bankr.ViewModels"
+             x:DataType="viewmodel:AccountViewModel"
              Title="SingleAccount"
              BackgroundImageSource="backdrop.png"
              BackgroundColor="{x:StaticResource BankrBlack}">
-    <VerticalStackLayout WidthRequest="900" Margin="0,50" Background="">
-        
-        <HorizontalStackLayout WidthRequest="900" Spacing="450" Margin="0,0,0,25">
-            <VerticalStackLayout WidthRequest="225" Spacing="2">
-                <Label TextColor="{x:StaticResource BankrNeonPink}" FontSize="Micro" >Total</Label>
-                <Label TextColor="{x:StaticResource BankrWhite}" FontSize="Large">R3,112,119.00</Label>
+   <Grid RowDefinitions="300, 100, *, 132" ColumnDefinitions="*" Padding="120,100">
+
+       <!--Total + Account Details-->
+
+       <FlexLayout JustifyContent="SpaceBetween">
+            <VerticalStackLayout HorizontalOptions="Start" VerticalOptions="Center">
+
+                <Label Text="total" TextTransform="Uppercase" TextColor = "{x:StaticResource BankrYellow}" FontSize="20" FontFamily="SFProDisplaySemibold" HorizontalTextAlignment="Start" CharacterSpacing="4"/>
+                <Label Text="R3,112,119.00" TextTransform="Uppercase" TextColor = "{x:StaticResource BankrWhite}" FontSize="100" FontFamily="SFProDisplaySemibold" HorizontalTextAlignment="Start" CharacterSpacing="20"/>
+
             </VerticalStackLayout>
-            <VerticalStackLayout WidthRequest="225" Spacing="2">
-                <HorizontalStackLayout>
-                    <Label VerticalOptions="Center" TextColor="{x:StaticResource BankrNeonBlue}" FontSize="Micro" >Account Holder</Label>
-                    <Button Text="Edit" BackgroundColor="{x:StaticResource BankrBlack}" TextColor="{x:StaticResource BankrNeonPink}"></Button>
+
+            <VerticalStackLayout HorizontalOptions="End" VerticalOptions="Center">
+
+                <HorizontalStackLayout HorizontalOptions="FillAndExpand" MaximumWidthRequest="1000">
+
+                        <Label Text="Account holder" TextTransform="Uppercase" TextColor = "{x:StaticResource BankrLightGray}" FontSize="20" FontFamily="SFProDisplaySemibold" CharacterSpacing="4" HorizontalTextAlignment="Start"/>
+                        <Label Text="EDIT" TextTransform="Uppercase" TextColor = "{x:StaticResource BankrYellow}" FontSize="20" FontFamily="SFProDisplaySemibold" CharacterSpacing="4" HorizontalTextAlignment="End"/>
+
                 </HorizontalStackLayout>
-                <Label TextColor="{x:StaticResource BankrWhite}" FontSize="Medium">Arthur Golding</Label>
-                <Label TextColor="{x:StaticResource BankrWhite}" Opacity="0.7" FontSize="Micro">#018392048305</Label>
+
+                <VerticalStackLayout>
+
+                    <Label Text="Auther Golding" TextTransform="Uppercase" TextColor = "{x:StaticResource BankrWhite}" FontSize="40" FontFamily="SFProDisplayBold" HorizontalTextAlignment="Start" CharacterSpacing="8"/>
+                <Label Text="#018392048305" TextTransform="Uppercase" TextColor = "{x:StaticResource BankrWhite}" FontSize="34" FontFamily="SFProDisplayRegular" HorizontalTextAlignment="Start" CharacterSpacing="10.2"/>
+
+                </VerticalStackLayout>
+
             </VerticalStackLayout>
-        </HorizontalStackLayout>
 
-        <VerticalStackLayout HeightRequest="501" BackgroundColor="{x:StaticResource BankrBlack}" Padding="0" IsClippedToBounds="True">
-            <VerticalStackLayout.Shadow>
-                <Shadow 
-                            Brush="black"
-                            Offset="0,0"
-                            Radius="50"
-                            Opacity=".5"/>
-            </VerticalStackLayout.Shadow>
+        </FlexLayout>
 
-            <Frame HeightRequest="501" BackgroundColor="{x:StaticResource BankrBlack}" Padding="0" HasShadow="True" BorderColor="{x:StaticResource BankrBlack}" IsClippedToBounds="True">
+       <!--Table Headers-->
+
+        <Frame
+            BackgroundColor="{x:StaticResource BankrBlack}"
+            BorderColor="Transparent"
+            HasShadow="True"
+            Grid.Row="1">
+
             <Frame.Shadow>
                 <Shadow
-                            Brush="black"
-                            Offset="0,10"
-                            Radius="20"
-                            Opacity=".5"/>
+                    Brush="black"
+                    Offset="0,0"
+                    Radius="50"
+                    Opacity="1"/>
+
             </Frame.Shadow>
-            
-            <VerticalStackLayout HeightRequest="500"  Padding="0" BackgroundColor="{x:StaticResource BankrBlack}">
 
+        </Frame>
 
-                <HorizontalStackLayout Margin="0,0,0,10" WidthRequest="900" HeightRequest="90" Padding="35" Spacing="100" BackgroundColor="{x:StaticResource BankrBlack}">
+        <FlexLayout JustifyContent="SpaceBetween" AlignItems="Center" Direction="Row" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Center">
 
-                    <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="Start"  WidthRequest="200" Text="Transaction Reference"/>
-                    <Label TextColor="{x:StaticResource BankrWhite}" HorizontalTextAlignment="Center" WidthRequest="200" Text="Amount"/>
-                    <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="End" WidthRequest="200" Text="Date"/>
-                    <HorizontalStackLayout.Shadow>
-                        <Shadow
-                            Brush="black"
-                            Offset="0,10"
-                            Radius="20"
-                            Opacity=".5"
-                            />
-                    </HorizontalStackLayout.Shadow>
-                </HorizontalStackLayout>
-                <ScrollView HeightRequest="325">
-                    <VerticalStackLayout>
-                        <HorizontalStackLayout WidthRequest="900" HeightRequest="75" Padding="25,15,15,25" Spacing="100">
-                            <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="Start"  WidthRequest="200" Text="Louis Vitton Sandton"/>
-                            <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="Center" WidthRequest="200" Text="-R330,000.00"/>
-                            <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="End" WidthRequest="200" Text="07-26-2022"/>
-                        </HorizontalStackLayout>
+            <Label TextColor="{x:StaticResource BankrWhite}" Text="transaction reference" FontSize="20" FontFamily="SFProDisplaySemibold" HorizontalTextAlignment="Center" TextTransform="Uppercase" CharacterSpacing="4.8" Padding="64, 32"/>
 
-                        <HorizontalStackLayout WidthRequest="900" HeightRequest="75" Padding="25,15,15,25" Spacing="100">
-                            <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="Start"  WidthRequest="200" Text="Stock Dividends"/>
-                            <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="Center" WidthRequest="200" Text="+R1,500.00"/>
-                            <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="End" WidthRequest="200" Text="07-25-2022"/>
-                        </HorizontalStackLayout>
+            <Label TextColor="{x:StaticResource BankrWhite}" Text="amount" FontSize="20" FontFamily="SFProDisplaySemibold" HorizontalTextAlignment="Center" TextTransform="Uppercase" CharacterSpacing="4.8" Padding="80, 32"/>
 
-                    </VerticalStackLayout>
-                </ScrollView>
+            <Label TextColor="{x:StaticResource BankrWhite}" Text="date" FontSize="20" FontFamily="SFProDisplaySemibold" HorizontalTextAlignment="Center" TextTransform="Uppercase" CharacterSpacing="4.8" Padding="224, 32"/>
 
-                    <HorizontalStackLayout Margin="0" VerticalOptions="End" BackgroundColor="{x:StaticResource BankrBlack}" HeightRequest="75">
+        </FlexLayout>
 
-                    <Label  VerticalOptions="Center"  WidthRequest="900" HorizontalTextAlignment="Center" TextColor="{x:StaticResource BankrWhite}" FontSize="Medium">Gold Checking Account</Label>
-                    <HorizontalStackLayout.Shadow>
-                        <Shadow
-                        Brush="black"
-                        Offset="0,-10"
-                        Radius="30"
-                        Opacity=".5"
-                        />
-                    </HorizontalStackLayout.Shadow>
-                </HorizontalStackLayout>
+       <!--Transaction Details-->
 
+        <ScrollView Grid.Row="2">
 
+            <ScrollView.Shadow>
+                <Shadow
+                    Brush="black"
+                    Offset="10,10"
+                    Radius="70"
+                    Opacity="1"/>
+
+            </ScrollView.Shadow>
+
+            <VerticalStackLayout>
+
+                <FlexLayout JustifyContent="SpaceBetween" AlignItems="Center" Direction="Row" Grid.Row="2" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="100" BackgroundColor="{x:StaticResource BankrBlackTransparent}">
+
+                    <Label TextColor="{x:StaticResource BankrWhite}" Text="louis vuitton sandton" FontSize="20" FontFamily="SFProDisplaySemibold" HorizontalTextAlignment="Center" TextTransform="Uppercase" CharacterSpacing="4.8" Padding="64, 32"/>
+
+                    <Label TextColor="{x:StaticResource BankrYellow}" Text="-R130,000.00" FontSize="20" FontFamily="SFProDisplaySemibold" HorizontalTextAlignment="Center" TextTransform="Uppercase" CharacterSpacing="4.8" Padding="64, 32"/>
+
+                    <Label TextColor="{x:StaticResource BankrWhite}" Text="07-26-2022" FontSize="20" FontFamily="SFProDisplaySemibold" HorizontalTextAlignment="Center" TextTransform="Uppercase" CharacterSpacing="4.8" Padding="164, 32"/>
+
+                </FlexLayout>
+
+                <FlexLayout JustifyContent="SpaceBetween" AlignItems="Center" Direction="Row" Grid.Row="2" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="100" BackgroundColor="{x:StaticResource BankrBlackTransparent}">
+
+                    <Label TextColor="{x:StaticResource BankrWhite}" Text="bank/r stock dividends" FontSize="20" FontFamily="SFProDisplaySemibold" HorizontalTextAlignment="Center" TextTransform="Uppercase" CharacterSpacing="4.8" Padding="64, 32"/>
+
+                    <Label TextColor="{x:StaticResource BankrLightGray}" Text="+R1,500,000.00" FontSize="20" FontFamily="SFProDisplaySemibold" HorizontalTextAlignment="Center" TextTransform="Uppercase" CharacterSpacing="4.8" Padding="64, 32"/>
+
+                    <Label TextColor="{x:StaticResource BankrWhite}" Text="07-26-2022" FontSize="20" FontFamily="SFProDisplaySemibold" HorizontalTextAlignment="Center" TextTransform="Uppercase" CharacterSpacing="4.8" Padding="164, 32"/>
+
+                </FlexLayout>
 
             </VerticalStackLayout>
 
+        </ScrollView>
+
+       <!--Table Footer-->
+
+        <Frame
+            BackgroundColor="{x:StaticResource BankrBlack}"
+            BorderColor="Transparent"
+            HasShadow="True"
+            Grid.Row="3">
+
+            <Frame.Shadow>
+                <Shadow
+                    Brush="black"
+                    Offset="10,10"
+                    Radius="70"
+                    Opacity="1"/>
+
+            </Frame.Shadow>
+
+            <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+
+                <Label TextColor="{x:StaticResource BankrWhite}" Text="Gold Checking Account" FontSize="34" FontFamily="SFProDisplayMedium" HorizontalTextAlignment="Center" CharacterSpacing="12.8" TextTransform="Uppercase"/>
+
+            </HorizontalStackLayout>
+
+
         </Frame>
-        </VerticalStackLayout>
-
-
-    </VerticalStackLayout>
+        
+    </Grid>
 </ContentPage>

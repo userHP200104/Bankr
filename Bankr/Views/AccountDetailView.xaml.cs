@@ -79,4 +79,16 @@ public partial class AccountDetailView : ContentPage
             BindingContext = accountid
         });
     }
+
+    private async void OnAddTransactionClicked(object sender, EventArgs e)
+    {
+        string SenderId = this.BindingContext.ToString();
+        int senderid = int.Parse((string)SenderId);
+
+        await Navigation.PushAsync(new CreateTransactionView
+        {
+            BindingContext = senderid
+        });
+
+    }
 }

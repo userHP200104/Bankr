@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Bankr.Views.AccountDetailView"
@@ -74,9 +74,15 @@
 
                     </CollectionView>
 
-                    <HorizontalStackLayout Margin="0" VerticalOptions="End" BackgroundColor="{x:StaticResource BankrBlack}" HeightRequest="75">
+                    <!--<HorizontalStackLayout Margin="0" VerticalOptions="Center" BackgroundColor="{x:StaticResource BankrBlack}" HeightRequest="75">
 
                         <Label  x:Name="AccountType" VerticalOptions="Center"  WidthRequest="900" HorizontalTextAlignment="Center" TextColor="{x:StaticResource BankrWhite}" FontSize="Medium"></Label>
+                        <Button  VerticalOptions="Center"  WidthRequest="100" BackgroundColor="{x:StaticResource BankrBlack}" TextColor="{x:StaticResource BankrNeonBlue}" Opacity="1" FontAttributes="Bold" FontSize="Large" Text="+" Clicked="OnAddClicked"></Button>-->
+                    <HorizontalStackLayout  WidthRequest="900" BackgroundColor="{x:StaticResource BankrBlack}" HeightRequest="75">
+
+                        <Label  x:Name="AccountType" VerticalOptions="Center"  WidthRequest="700" HorizontalTextAlignment="Center" TextColor="{x:StaticResource BankrWhite}" Opacity="0.7" FontAttributes="Bold" FontSize="Medium"></Label>
+                        <Button VerticalOptions="Center"  WidthRequest="100" BackgroundColor="{x:StaticResource BankrBlack}" TextColor="{x:StaticResource BankrNeonBlue}" Opacity="1" FontAttributes="Bold" FontSize="Large" Text="+" Clicked="OnAddTransactionClicked"></Button>
+
                         <HorizontalStackLayout.Shadow>
                             <Shadow
                         Brush="black"

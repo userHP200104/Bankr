@@ -8,8 +8,9 @@ public partial class App : Application
 
     public static AccountRepository AccountRepo { get; private set; }
 
+    public static TransactionRepository TransactionRepo { get; private set; }
 
-    public App(ClientRepository clientRepo, StaffRepository staffRepo, AccountRepository accountRepo)
+    public App(ClientRepository clientRepo, StaffRepository staffRepo, AccountRepository accountRepo, TransactionRepository transactionRepo)
     {
         InitializeComponent();
 
@@ -19,6 +20,7 @@ public partial class App : Application
         ClientRepo = clientRepo;
         StaffRepo = staffRepo;
         AccountRepo = accountRepo;
+        TransactionRepo = transactionRepo;
 
     }
 }

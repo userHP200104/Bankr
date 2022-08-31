@@ -112,25 +112,19 @@ namespace Bankr.Service
             }
         }
 
-        public bool UpdateAccount(int id, string name, string surname)
+        public bool MoneyIn(int id, double amount)
         {
             try
             {
                 Init();
 
-                var client = conn.Table<Client>().Where(x => x.Id == id).FirstOrDefault();
+                var account = conn.Table<Account>().Where(x => x.Id == id).FirstOrDefault();
 
-                if (client != null)
+                if (account != null)
                 {
-                    if (name != null)
-                    {
-                        client.Name = name;
-                    }
-                    if (surname != null)
-                    {
-                        client.Surname = surname;
-                    }
-                    var i = conn.Update(client);
+                    account.Balance = account.Balance + amount;
+                    
+                    var i = conn.Update(account);
 
                     if (i == -1)
                     {
@@ -146,6 +140,54 @@ namespace Bankr.Service
                 Debug.WriteLine(ex.Message);
                 return false;
             }
+
+        }
+
+        public bool MoneyOut(int id, double amount)
+        {
+            try
+            {
+                Init();
+
+                var account = conn.Table<Account>().Where(x => x.Id == id).FirstOrDefault();
+
+                if (account != null)
+                {
+                    account.Balance = account.Balance - amount;
+
+                    var i = conn.Update(account);
+
+                    if (i == -1)
+                    {
+                        Debug.WriteLine("Issue updating");
+                    }
+                    return true;
+                }
+                else { return false; }
+
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+                return false;
+            }
+
+        }
+
+        public bool FreeTrans(Account item)
+        {
+            try
+            {
+                item.FreeTransactions = item.FreeTransactions - 1;
+                var i = conn.Update(item);
+                if (i == -1)
+                {
+                    Debug.WriteLine("Issue updating");
+                }
+                
+                return true;
+            }
+            catch { return false; }
 
         }
     }

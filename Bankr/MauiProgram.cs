@@ -38,6 +38,7 @@ public static class MauiProgram
         builder.Services.AddSingleton<ClientRepository>(s => ActivatorUtilities.CreateInstance<ClientRepository>(s, userDbPath));
         builder.Services.AddSingleton<StaffRepository>(s => ActivatorUtilities.CreateInstance<StaffRepository>(s, userDbPath));
         builder.Services.AddSingleton<AccountRepository>(s => ActivatorUtilities.CreateInstance<AccountRepository>(s, userDbPath));
+        builder.Services.AddSingleton<TransactionRepository>(s => ActivatorUtilities.CreateInstance<TransactionRepository>(s, userDbPath));
 
         return builder.Build();
 	}

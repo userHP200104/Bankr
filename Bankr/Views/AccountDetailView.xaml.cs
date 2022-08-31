@@ -30,6 +30,8 @@ public partial class AccountDetailView : ContentPage
             AccountNumber.Text = Account.Id.ToString();
             AccountBalance.Text = Account.Balance.ToString();
             AccountType.Text=Account.AccountType.ToString();
+            FreeTransactions.Text = Account.FreeTransactions.ToString();
+            TransactionFee.Text=Account.TransFee.ToString();
 
 //            if (App.AccountRepo.GetTransactionsForAccount(accountid) != null)
             //{
@@ -47,17 +49,7 @@ public partial class AccountDetailView : ContentPage
 
         //listView.ItemsSource = await database.GetAccountsAsync(ClientId);
     }
-    private async void OnAddClicked(object sender, EventArgs e)
-    {
-        string ClientId = this.BindingContext.ToString();
-        int clientid = int.Parse((string)ClientId);
 
-        await Navigation.PushAsync(new AddAccountView
-        {
-            BindingContext = clientid
-        });
-
-    }
     private async void OnDeleteClicked(object sender, EventArgs e)
     {
         string AccountId = this.BindingContext.ToString();
@@ -67,13 +59,31 @@ public partial class AccountDetailView : ContentPage
         Navigation.PopAsync();
     }
 
-    private async void OnAccountClicked(object sender, SelectionChangedEventArgs e)
+    private async void OnDepositClicked(object sender, EventArgs e)
     {
-        string accountid = (e.CurrentSelection.FirstOrDefault() as Account)?.Id.ToString();
+        string AccountId = this.BindingContext.ToString();
 
-        await Navigation.PushAsync(new AccountDetailView
+        await Navigation.PushAsync(new DepositView
         {
-            BindingContext = accountid
+            BindingContext = AccountId
+        }) ;
+    }
+    private async void OnWithdrawClicked(object sender, EventArgs e)
+    {
+        string AccountId = this.BindingContext.ToString();
+
+        await Navigation.PushAsync(new DepositView
+        {
+            BindingContext = AccountId
+        });
+    }
+    private async void OnTransferClicked(object sender, EventArgs e)
+    {
+        string AccountId = this.BindingContext.ToString();
+
+        await Navigation.PushAsync(new DepositView
+        {
+            BindingContext = AccountId
         });
     }
 }

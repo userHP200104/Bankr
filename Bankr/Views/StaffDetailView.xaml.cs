@@ -29,7 +29,7 @@ public partial class StaffDetailView : ContentPage
        
         Name.Placeholder=StaffMember.Name;
         Surname.Placeholder=StaffMember.Surname;
-        Role.Placeholder=StaffMember.Role;
+        Role.Title=StaffMember.Role;
     }
     private async void OnEditClicked(object sender, EventArgs e)
     {
@@ -38,8 +38,8 @@ public partial class StaffDetailView : ContentPage
         int staffid = int.Parse((string)StaffId);
 
         string staffname = Name.Text; 
-        string staffrole=Surname.Text;
-        string staffsurname=Role.Text;
+        string staffsurname=Surname.Text;
+        string staffrole=Role.SelectedItem.ToString();
 
         App.StaffRepo.UpdateStaff(staffid, staffname, staffsurname, staffrole);
         await Navigation.PopAsync();

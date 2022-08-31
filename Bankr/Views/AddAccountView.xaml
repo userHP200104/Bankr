@@ -48,8 +48,33 @@
                 </Picker.ItemsSource>
             </Picker>
 
+            <Label 
+            x:Name="Description1"
+            WidthRequest="350" 
+            HorizontalTextAlignment="Center"
+            Margin="0,50,0,10"
+            TextColor="{x:StaticResource BankrWhite}" 
+            FontSize="Micro"
+            />
+            <Label 
+            x:Name="Description2"
+            WidthRequest="350" 
+            HorizontalTextAlignment="Center"
+            Margin="0,50,0,10"
+            TextColor="{x:StaticResource BankrWhite}" 
+            FontSize="Micro"
+            />
+            <Label 
+            x:Name="Description3"
+            WidthRequest="350" 
+            HorizontalTextAlignment="Center"
+            Margin="0,50,0,10"
+            TextColor="{x:StaticResource BankrWhite}" 
+            FontSize="Micro"
+            />
 
-        <Button 
+
+            <Button 
 		WidthRequest="100"
 		Margin="0,20,0,0"
 		Clicked="OnSaveClicked" 

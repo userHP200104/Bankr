@@ -7,6 +7,7 @@ public partial class App : Application
     public static StaffRepository StaffRepo { get; private set; }
 
     public static AccountRepository AccountRepo { get; private set; }
+    public static TransactionRepository TransactionRepo { get; private set; }
 
     public static TransactionRepository TransactionRepo { get; private set; }
 

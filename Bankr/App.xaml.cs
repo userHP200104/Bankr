@@ -6,8 +6,10 @@ public partial class App : Application
     public static ClientRepository ClientRepo { get; private set; }
     public static StaffRepository StaffRepo { get; private set; }
 
+    public static AccountRepository AccountRepo { get; private set; }
 
-    public App(ClientRepository clientRepo, StaffRepository staffRepo)
+
+    public App(ClientRepository clientRepo, StaffRepository staffRepo, AccountRepository accountRepo)
     {
         InitializeComponent();
 
@@ -16,6 +18,7 @@ public partial class App : Application
         //Initialising our user repo
         ClientRepo = clientRepo;
         StaffRepo = staffRepo;
+        AccountRepo = accountRepo;
 
     }
 }

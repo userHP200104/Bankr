@@ -15,10 +15,9 @@ public partial class AddAccountView : ContentPage
     {
         string ClientId = this.BindingContext.ToString();
         base.OnAppearing();
-        BankrDatabase database = await BankrDatabase.Instance;
         int clientid = int.Parse((string)ClientId);
 
-        People Client = await database.GetPeopleFromIdAsync(clientid);
+        Client Client = App.ClientRepo.GetClientFromId(clientid);
         ClientName.Text = "New Account For: "+Client.Name + " " + Client.Surname;
     }
 
@@ -67,11 +66,9 @@ public partial class AddAccountView : ContentPage
             interest = 0.00;
         }
 
-        var account = new Account { accountType = accounttype, balance=0, freeTransactions=freeTrans, transFee=transFee, interest=interest, clientId = clientid };
+        var account = new Account { AccountType = accounttype, Balance=0, FreeTransactions=freeTrans, TransFee=transFee, Interest=interest, ClientId = clientid };
         Console.WriteLine(account);
-        BankrDatabase database = await BankrDatabase.Instance;
-
-        await database.SaveAccountAsync(account);
+        App.AccountRepo.AddAccount(account);
         await Navigation.PopAsync();
     }
 }

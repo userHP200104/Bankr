@@ -22,18 +22,21 @@ public static class MauiProgram
         builder.Services.AddSingleton<StaffViewModel>();
 
         builder.Services.AddSingleton<StaffDetailView>();
+        builder.Services.AddSingleton<ClientDetailView>();
 
         builder.Services.AddSingleton<ClientView>();
         builder.Services.AddSingleton<ClientViewModel>();
 
-       // builder.Services.AddSingleton<Accounts>();
-       // builder.Services.AddSingleton<TodoViewModel>();
+        builder.Services.AddSingleton<Accounts>();
+        builder.Services.AddSingleton<AddAccountView>();
+        // builder.Services.AddSingleton<TodoViewModel>();
 
 
         //DB Repos
         string userDbPath = FileAccessHelper.GetLocalFilePath("projectDatabase.db3");
         builder.Services.AddSingleton<ClientRepository>(s => ActivatorUtilities.CreateInstance<ClientRepository>(s, userDbPath));
         builder.Services.AddSingleton<StaffRepository>(s => ActivatorUtilities.CreateInstance<StaffRepository>(s, userDbPath));
+        builder.Services.AddSingleton<AccountRepository>(s => ActivatorUtilities.CreateInstance<AccountRepository>(s, userDbPath));
 
         return builder.Build();
 	}

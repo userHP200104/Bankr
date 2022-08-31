@@ -14,18 +14,12 @@ namespace Bankr.Model
         [PrimaryKey, AutoIncrement, Column("_id")]
         public int Id { get; set; }
 
-        [ObservableProperty]
-        public double balance;
-        [ObservableProperty]
-        public int freeTransactions;
-        [ObservableProperty]
-        public double interest;
-        [ObservableProperty]
-        public double transFee;
-        [ObservableProperty]
-        public string accountType;
-        [ObservableProperty]
-        public int clientId;
+        public double Balance { get; set; }
+        public int FreeTransactions { get; set; }
+        public double Interest { get; set; }
+        public double TransFee { get; set; }
+        public string AccountType { get; set; }
+        public int ClientId { get; set; }
     }
 
     

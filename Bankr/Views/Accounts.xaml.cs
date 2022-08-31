@@ -17,12 +17,28 @@ public partial class Accounts : ContentPage
     {
         string ClientId =this.BindingContext.ToString();
         base.OnAppearing();
-        BankrDatabase database = await BankrDatabase.Instance;
         int clientid = int.Parse((string)ClientId);
+        Client Client;
 
-        People Client = await database.GetPeopleFromIdAsync(clientid);
-        ClientName.Text=Client.Name+" "+Client.Surname;
-        listView.ItemsSource = await database.GetAccountsAsync(ClientId);
+        if (App.ClientRepo.GetClientFromId(clientid)!=null)
+        {
+            Client = App.ClientRepo.GetClientFromId(clientid);
+            ClientName.Text = Client.Name + " " + Client.Surname;
+
+            if (App.AccountRepo.GetAccountsForClient(clientid) != null) {
+                List<Account> AccountList = App.AccountRepo.GetAccountsForClient(clientid);
+                listView.ItemsSource = AccountList;
+            }
+
+        }
+        else
+        {
+            Navigation.PopAsync();
+        }
+        
+
+        
+        //listView.ItemsSource = await database.GetAccountsAsync(ClientId);
     }
     private async void OnAddClicked(object sender, EventArgs e)
     {
@@ -34,5 +50,16 @@ public partial class Accounts : ContentPage
             BindingContext = clientid
         });
 
+    }
+    private async void OnEditClicked(object sender, EventArgs e)
+    {
+        string ClientId = this.BindingContext.ToString();
+        int clientid = int.Parse((string)ClientId);
+
+        await Navigation.PushAsync(new ClientDetailView
+        {
+            BindingContext = clientid
+
+        }) ;
     }
 }

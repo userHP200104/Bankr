@@ -23,6 +23,8 @@ public partial class StaffDetailView : ContentPage
 
         Staff StaffMember = App.StaffRepo.GetStaffFromId(staffid);
 
+        StaffName.Text = StaffMember.Name+" "+StaffMember.Surname;
+
         Id.Text = StaffId;
        
         Name.Placeholder=StaffMember.Name;

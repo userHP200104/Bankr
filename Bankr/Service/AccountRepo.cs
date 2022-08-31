@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Bankr.Service
 {
-    public class ClientRepository
+    public class AccountRepository
     {
         string _dbPath;
 
@@ -24,43 +24,57 @@ namespace Bankr.Service
                 return;
 
             conn = new SQLiteConnection(_dbPath);
-            conn.CreateTable<Client>();
+            conn.CreateTable<Account>();
         }
 
 
-        public ClientRepository(string dbPath)
+        public AccountRepository(string dbPath)
         {
             _dbPath = dbPath;
         }
 
-        public List<Client> GetClientsAsync()
+        public List<Account> GetAccountsAsync()
         {
             try
             {
                 Init(); //first connect
 
-                return conn.Table<Client>().ToList();
+                return conn.Table<Account>().ToList();
             }
             catch (SQLiteException ex)
             {
                 Debug.WriteLine(ex.Message);
             }
 
-            return new List<Client>();
+            return new List<Account>();
         }
 
-        public Client GetClientFromId(int id)
+        public Account GetAccountFromId(int id)
         {
             try
             {
                 Init();
-                return conn.Table<Client>().Where(i => i.Id == id).Single();
+                return conn.Table<Account>().Where(i => i.Id == id).Single();
             }
             catch (Exception ex)
             {
                 return null;
             }
-            
+
+        }
+
+        public List<Account> GetAccountsForClient(int clientid)
+        {
+            try
+            {
+                Init();
+                return conn.Table<Account>().Where(i => i.ClientId == clientid).ToList();
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+
         }
         //public Task<List<People>> GetCustomers()
         //{
@@ -72,7 +86,7 @@ namespace Bankr.Service
         //  return Database.Table<People>().Where(i => i.Id == id).FirstOrDefaultAsync();
         //}
 
-        public void SaveClientAsync(Client item)
+        public void AddAccount(Account item)
         {
             try
             {
@@ -84,13 +98,13 @@ namespace Bankr.Service
                 Debug.WriteLine(ex.Message);
             }
         }
-        public void DeleteClient(int id)
+        public void DeleteAccount(int id)
         {
             Debug.WriteLine("DB Id: " + id.ToString());
 
             try
             {
-                conn.Delete<Client>(id);
+                conn.Delete<Account>(id);
             }
             catch (Exception ex)
             {
@@ -98,7 +112,7 @@ namespace Bankr.Service
             }
         }
 
-        public bool UpdateClient(int id, string name, string surname)
+        public bool UpdateAccount(int id, string name, string surname)
         {
             try
             {

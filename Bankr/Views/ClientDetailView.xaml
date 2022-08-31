@@ -44,7 +44,7 @@
                         <Entry TextColor="{x:StaticResource BankrWhite}" HorizontalTextAlignment="Center" WidthRequest="200" x:Name="Name"/>
                     </HorizontalStackLayout>
 
-                    <HorizontalStackLayout Margin="0,0,0,20" WidthRequest="900" HeightRequest="90" Padding="250,35,35,35" Spacing="75" BackgroundColor="{x:StaticResource BankrBlack}">
+                    <HorizontalStackLayout Margin="0,0,0,10" WidthRequest="900" HeightRequest="90" Padding="250,35,35,35" Spacing="75" BackgroundColor="{x:StaticResource BankrBlack}">
                         <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="Start"  WidthRequest="200" Text="Surname"/>
                         <Entry TextColor="{x:StaticResource BankrWhite}" HorizontalTextAlignment="Center" WidthRequest="200" x:Name="Surname"/>
                     </HorizontalStackLayout>

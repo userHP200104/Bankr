@@ -27,8 +27,9 @@ public static class MauiProgram
         builder.Services.AddSingleton<ClientView>();
         builder.Services.AddSingleton<ClientViewModel>();
 
-        builder.Services.AddSingleton<Accounts>();
+        //builder.Services.AddSingleton<AccountsView>();
         builder.Services.AddSingleton<AddAccountView>();
+        builder.Services.AddSingleton<AccountDetailView>();
         // builder.Services.AddSingleton<TodoViewModel>();
 
 

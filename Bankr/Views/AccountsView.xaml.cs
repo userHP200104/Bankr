@@ -1,13 +1,13 @@
 namespace Bankr.Views;
 using Bankr.Data;
 using Bankr.Model;
-
+using Bankr.Service;
 
 //[QueryProperty(nameof(ClientId), "ClientId")]
-public partial class Accounts : ContentPage
+public partial class AccountsView : ContentPage
 {
     //public string ClientId { get => ClientId; set { ClientId = value; OnPropertyChanged(); } }
-    public Accounts()
+    public AccountsView()
     {
         InitializeComponent();
         //BindingContext = this;
@@ -27,7 +27,7 @@ public partial class Accounts : ContentPage
 
             if (App.AccountRepo.GetAccountsForClient(clientid) != null) {
                 List<Account> AccountList = App.AccountRepo.GetAccountsForClient(clientid);
-                listView.ItemsSource = AccountList;
+                collectionView.ItemsSource = AccountList;
             }
 
         }
@@ -61,5 +61,15 @@ public partial class Accounts : ContentPage
             BindingContext = clientid
 
         }) ;
+    }
+
+    private async void OnAccountClicked(object sender, SelectionChangedEventArgs e)
+    {
+        string accountid = (e.CurrentSelection.FirstOrDefault() as Account)?.Id.ToString();
+
+        await Navigation.PushAsync(new AccountDetailView
+        {
+            BindingContext = accountid
+        });
     }
 }

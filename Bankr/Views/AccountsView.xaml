@@ -1,7 +1,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Bankr.Views.Accounts"
-             Title="SingleAccount"
+             x:Class="Bankr.Views.AccountsView"
+             Title="AccountsView"
              BackgroundImageSource="backdrop.png"
              BackgroundColor="{x:StaticResource BankrBlack}">
     <VerticalStackLayout WidthRequest="900" Margin="0,50" >
@@ -41,24 +41,18 @@
                         </HorizontalStackLayout.Shadow>
                     </HorizontalStackLayout>
 
-                    <ListView x:Name="listView" HeightRequest="530" BackgroundColor="{x:StaticResource BankrBlack}">
-                        <ListView.ItemTemplate>
+                    <CollectionView SelectionMode="Single" x:Name="collectionView" HeightRequest="530" BackgroundColor="{x:StaticResource BankrBlack}" SelectionChanged="OnAccountClicked">
+                        <CollectionView.ItemTemplate>
                             <DataTemplate >
-                                <ViewCell>
-                                    <HorizontalStackLayout WidthRequest="900" HeightRequest="70" Padding="25" Spacing="75">
-                                        <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="Start"  WidthRequest="200" Text="{Binding Id}"/>
-                                        <Label TextColor="{x:StaticResource BankrWhite}" HorizontalTextAlignment="Center" WidthRequest="200" Text="{Binding AccountType}"/>
-                                        <Label TextColor="{x:StaticResource BankrWhite}" HorizontalTextAlignment="End" WidthRequest="150" Text="R"/>
-                                        <Label TextColor="{x:StaticResource BankrWhite}" HorizontalTextAlignment="Start" WidthRequest="50" Text="{Binding Balance}"/>
-                                    </HorizontalStackLayout>
-                                </ViewCell>
+                                <HorizontalStackLayout WidthRequest="900" HeightRequest="70" Padding="25" Spacing="75">
+                                    <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="Start"  WidthRequest="200" Text="{Binding Id}"/>
+                                    <Label TextColor="{x:StaticResource BankrWhite}" HorizontalTextAlignment="Center" WidthRequest="200" Text="{Binding AccountType}"/>
+                                    <Label TextColor="{x:StaticResource BankrWhite}" HorizontalTextAlignment="End" WidthRequest="150" Text="R"/>
+                                    <Label TextColor="{x:StaticResource BankrWhite}" HorizontalTextAlignment="Start" WidthRequest="50" Text="{Binding Balance}"/>
+                                </HorizontalStackLayout>
                             </DataTemplate>
-                        </ListView.ItemTemplate>
-
-
-
-
-                    </ListView>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
 
                     <HorizontalStackLayout  WidthRequest="900" BackgroundColor="{x:StaticResource BankrBlack}" HeightRequest="75">
                         <Button  Clicked="OnEditClicked" BackgroundColor="{x:StaticResource BankrBlack}" TextColor="{x:StaticResource BankrNeonPink}"   HeightRequest="75" WidthRequest="100" Text="EDIT"/>

@@ -33,6 +33,64 @@ namespace Bankr.Service
             _dbPath = dbPath;
         }
 
+<<<<<<< Updated upstream
+=======
+        public List<Transaction> GetTransactionsGreen(int id)
+        {
+            try
+            {
+                Init(); //first connect
+
+
+                return conn.Table<Transaction>().Where(i => i.AccountIn == id).ToList();
+
+                Debug.WriteLine("gots them");
+            }
+            catch (SQLiteException ex)
+            {
+                Debug.WriteLine(ex.Message);
+                Debug.WriteLine("dont gots them");
+            }
+
+            return new List<Transaction>();
+        }
+
+        public List<Transaction> GetTransactionsRed(int id)
+        {
+            try
+            {
+                Init(); //first connect
+
+
+                return conn.Table<Transaction>().Where(i => i.AccountOut == id).ToList();
+
+                Debug.WriteLine("gots them");
+            }
+            catch (SQLiteException ex)
+            {
+                Debug.WriteLine(ex.Message);
+                Debug.WriteLine("dont gots them");
+            }
+
+            return new List<Transaction>();
+        }
+
+        public void TransactionFee(int id, int fee)
+        {
+            Transaction transaction = new Transaction()
+            {
+                AccountOut = id,
+                AccountIn = 999,
+                TransactionAmount = fee,
+                TransactionType = "Transaction Fee",
+                TransactionFee = fee
+
+            };
+
+            Transfer(transaction);
+        }
+
+>>>>>>> Stashed changes
         public void Withdrawal(Transaction item)
         {
             Account accountOut = App.AccountRepo.GetAccountFromId(item.AccountOut);

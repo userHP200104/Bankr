@@ -1,25 +1,32 @@
 namespace Bankr.Views;
 using Bankr.Data;
 using Bankr.Model;
-using Bankr.ViewModels;
-using Microsoft.Maui.Controls;
 
 
-
+//[QueryProperty(nameof(ClientId), "ClientId")]
 public partial class AccountDetailView : ContentPage
 {
-
-    TransactionViewModel vm = new TransactionViewModel();
-
+    //public string ClientId { get => ClientId; set { ClientId = value; OnPropertyChanged(); } }
+    public AccountDetailView()
+    {
+        InitializeComponent();
+        //BindingContext = this;
+    }
 
     protected override async void OnAppearing()
     {
         string AccountId = this.BindingContext.ToString();
         base.OnAppearing();
-        List<Transaction> transactions = App.TransactionRepo.GetTransactionsAsync(int.Parse(AccountId));
+<<<<<<< Updated upstream
+=======
+        List<Transaction> transactionsred = App.TransactionRepo.GetTransactionsRed(int.Parse(AccountId));
+        List<Transaction> transactionsgreen = App.TransactionRepo.GetTransactionsGreen(int.Parse(AccountId));
 
-        Transactions.ItemsSource = transactions;
+        TransactionsRed.ItemsSource = transactionsred;
+        TransactionsGreen.ItemsSource = transactionsgreen;
 
+
+>>>>>>> Stashed changes
         int accountid = int.Parse((string)AccountId);
         Account Account;
         Client Client;
@@ -53,13 +60,6 @@ public partial class AccountDetailView : ContentPage
         //listView.ItemsSource = await database.GetAccountsAsync(ClientId);
     }
 
-    public AccountDetailView()
-    {
-        InitializeComponent();
-        //BindingContext = this;
-        BindingContext = vm;
-    }
-
     private async void OnDeleteClicked(object sender, EventArgs e)
     {
         string AccountId = this.BindingContext.ToString();
@@ -77,35 +77,50 @@ public partial class AccountDetailView : ContentPage
         {
             BindingContext = AccountId
         }) ;
+<<<<<<< Updated upstream
+=======
 
-        List<Transaction> transactions = App.TransactionRepo.GetTransactionsAsync(int.Parse(AccountId));
+        List<Transaction> transactionsred = App.TransactionRepo.GetTransactionsRed(int.Parse(AccountId));
+        List<Transaction> transactionsgreen = App.TransactionRepo.GetTransactionsGreen(int.Parse(AccountId));
 
-        Transactions.ItemsSource = transactions;
+        TransactionsRed.ItemsSource = transactionsred;
+        TransactionsGreen.ItemsSource = transactionsgreen;
+>>>>>>> Stashed changes
     }
     private async void OnWithdrawClicked(object sender, EventArgs e)
     {
         string AccountId = this.BindingContext.ToString();
 
-        await Navigation.PushAsync(new WithdrawView
+        await Navigation.PushAsync(new DepositView
         {
             BindingContext = AccountId
         });
+<<<<<<< Updated upstream
+=======
 
-        List<Transaction> transactions = App.TransactionRepo.GetTransactionsAsync(int.Parse(AccountId));
+        List<Transaction> transactionsred = App.TransactionRepo.GetTransactionsRed(int.Parse(AccountId));
+        List<Transaction> transactionsgreen = App.TransactionRepo.GetTransactionsGreen(int.Parse(AccountId));
 
-        Transactions.ItemsSource = transactions;
+        TransactionsRed.ItemsSource = transactionsred;
+        TransactionsGreen.ItemsSource = transactionsgreen;
+>>>>>>> Stashed changes
     }
     private async void OnTransferClicked(object sender, EventArgs e)
     {
         string AccountId = this.BindingContext.ToString();
 
-        await Navigation.PushAsync(new TransferView
+        await Navigation.PushAsync(new DepositView
         {
             BindingContext = AccountId
         });
+<<<<<<< Updated upstream
+=======
 
-        List<Transaction> transactions = App.TransactionRepo.GetTransactionsAsync(int.Parse(AccountId));
+        List<Transaction> transactionsred = App.TransactionRepo.GetTransactionsRed(int.Parse(AccountId));
+        List<Transaction> transactionsgreen = App.TransactionRepo.GetTransactionsGreen(int.Parse(AccountId));
 
-        Transactions.ItemsSource = transactions;
+        TransactionsRed.ItemsSource = transactionsred;
+        TransactionsGreen.ItemsSource = transactionsgreen;
+>>>>>>> Stashed changes
     }
 }

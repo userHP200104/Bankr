@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Bankr.Views.AccountDetailView"
@@ -56,11 +56,16 @@
                 <VerticalStackLayout HeightRequest="600"  Padding="0" BackgroundColor="{x:StaticResource BankrBlack}">
 
 
-                    <HorizontalStackLayout Margin="0,0,0,10" WidthRequest="900" HeightRequest="90" Padding="35" Spacing="100" BackgroundColor="{x:StaticResource BankrBlack}">
+                    <HorizontalStackLayout Margin="0,0,0,10" WidthRequest="900" HeightRequest="90" Padding="35" BackgroundColor="{x:StaticResource BankrBlack}">
 
-                        <Label TextColor="{x:StaticResource BankrWhite}" HorizontalTextAlignment="Start" WidthRequest="200" Text="Amount"/>
-                        <Label TextColor="{x:StaticResource BankrWhite}" HorizontalTextAlignment="Center" WidthRequest="200" Text="From"/>
-                        <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="End" WidthRequest="200" Text="Type"/>
+<<<<<<< Updated upstream
+                        <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="Start"  WidthRequest="200" Text="Transaction Reference"/>
+                        <Label TextColor="{x:StaticResource BankrWhite}" HorizontalTextAlignment="Center" WidthRequest="200" Text="Amount"/>
+                        <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="End" WidthRequest="200" Text="Date"/>
+=======
+                        <Label TextColor="{x:StaticResource BankrWhite}" HorizontalTextAlignment="Center" WidthRequest="450" Text="Incoming"/>
+                        <Label TextColor="{x:StaticResource BankrWhite}" HorizontalTextAlignment="Center" WidthRequest="450" Text="Outgoing"/>
+>>>>>>> Stashed changes
                         <HorizontalStackLayout.Shadow>
                             <Shadow
                             Brush="black"
@@ -70,24 +75,79 @@
                             />
                         </HorizontalStackLayout.Shadow>
                     </HorizontalStackLayout>
-                    <CollectionView SelectionMode="Single" x:Name="Transactions" HeightRequest="325">
+<<<<<<< Updated upstream
+                    <CollectionView x:Name="Transactions" HeightRequest="325">
                         <CollectionView.ItemTemplate>
                             <DataTemplate>
                                 <HorizontalStackLayout WidthRequest="900" HeightRequest="75" Padding="25,15,15,25" Spacing="100">
-                                    <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="Start"  WidthRequest="200" Text="{Binding TransactionAmount}"/>
-                                    <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="Center"  WidthRequest="200" Text="{Binding AccountOut}"/>
-                                    <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="End" WidthRequest="200" Text="{Binding TransactionType}"/>
+                                    <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="Start"  WidthRequest="200" Text="Louis Vitton Sandton"/>
+                                    <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="Center" WidthRequest="200" Text="-R330,000.00"/>
+                                    <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="End" WidthRequest="200" Text="07-26-2022"/>
                                 </HorizontalStackLayout>
                             </DataTemplate>
                         </CollectionView.ItemTemplate>
-
-
-                    </CollectionView>
+=======
+>>>>>>> Stashed changes
 
                     <HorizontalStackLayout>
-                        <Button  BackgroundColor="{x:StaticResource BankrBlack}" TextColor="{x:StaticResource BankrNeonPink}"   HeightRequest="75" WidthRequest="100" Text="Withdraw" Clicked="OnWithdrawClicked"/>
-                        <Button  BackgroundColor="{x:StaticResource BankrBlack}" TextColor="{x:StaticResource BankrNeonPink}"   HeightRequest="75" WidthRequest="100" Text="Deposit" Clicked="OnDepositClicked"/>
-                        <Button  BackgroundColor="{x:StaticResource BankrBlack}" TextColor="{x:StaticResource BankrNeonPink}"   HeightRequest="75" WidthRequest="100" Text="Transfer" Clicked="OnTransferClicked"/>
+                        <VerticalStackLayout HeightRequest="400">
+                        <HorizontalStackLayout  WidthRequest="450" HeightRequest="50" Padding="12,7,7,0" Spacing="50" >
+                            <Label TextColor="{x:StaticResource BankrWhite}" HorizontalTextAlignment="Start" WidthRequest="100" FontSize="Micro" Text="Amount"/>
+                                <Label TextColor="{x:StaticResource BankrWhite}" HorizontalTextAlignment="Center" WidthRequest="100" FontSize="Micro" Text="From"/>
+                                <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="End" WidthRequest="100" FontSize="Micro" Text="Type"/>
+                        </HorizontalStackLayout>
+                        
+                        <CollectionView SelectionMode="Single" x:Name="TransactionsGreen" HeightRequest="275">
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <HorizontalStackLayout WidthRequest="450" HeightRequest="75" Padding="12,7,7,12" Spacing="25">
+                                        <Label TextColor="{x:StaticResource BankrNeonBlue}"  HorizontalTextAlignment="Start"  WidthRequest="100" Text="{Binding TransactionAmount}"/>
+                                        <Label TextColor="{x:StaticResource BankrNeonBlue}"  HorizontalTextAlignment="Center"  WidthRequest="100" Text="{Binding AccountOut}"/>
+                                        <Label TextColor="{x:StaticResource BankrNeonBlue}"  HorizontalTextAlignment="End" WidthRequest="100" Text="{Binding TransactionType}"/>
+                                    </HorizontalStackLayout>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+
+
+                        </CollectionView>
+                            <VerticalStackLayout.Shadow>
+                                <Shadow
+                                Brush="white"
+                                Offset="-10,0"
+                                Radius="-20"
+                                Opacity=".5"
+                            />
+                            </VerticalStackLayout.Shadow>
+                        </VerticalStackLayout>
+
+                        <VerticalStackLayout BackgroundColor="{x:StaticResource BankrBlack}">
+                            <HorizontalStackLayout Margin="0" WidthRequest="450" HeightRequest="50" Padding="12,7,7,12" Spacing="50">
+                                <Label TextColor="{x:StaticResource BankrWhite}" HorizontalTextAlignment="Start" WidthRequest="100" FontSize="Micro" Text="Amount"/>
+                                <Label TextColor="{x:StaticResource BankrWhite}" HorizontalTextAlignment="Center" WidthRequest="100" FontSize="Micro" Text="From"/>
+                                <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="End" WidthRequest="100" FontSize="Micro" Text="Type"/>
+                            </HorizontalStackLayout>
+
+                            <CollectionView SelectionMode="Single" x:Name="TransactionsRed" HeightRequest="275">
+                                <CollectionView.ItemTemplate>
+                                    <DataTemplate>
+                                        <HorizontalStackLayout WidthRequest="450" HeightRequest="75" Padding="12,7,7,12" Spacing="25">
+                                            <Label TextColor="{x:StaticResource BankrNeonRed}"  HorizontalTextAlignment="Start"  WidthRequest="100" Text="{Binding TransactionAmount}"/>
+                                            <Label TextColor="{x:StaticResource BankrNeonRed}"  HorizontalTextAlignment="Center"  WidthRequest="100" Text="{Binding AccountOut}"/>
+                                            <Label TextColor="{x:StaticResource BankrNeonRed}"  HorizontalTextAlignment="End" WidthRequest="100" Text="{Binding TransactionType}"/>
+                                        </HorizontalStackLayout>
+                                    </DataTemplate>
+                                </CollectionView.ItemTemplate>
+
+
+                            </CollectionView>
+                        </VerticalStackLayout>
+                    </HorizontalStackLayout>
+
+
+                    <HorizontalStackLayout>
+                        <Button  BackgroundColor="{x:StaticResource BankrBlack}" TextColor="{x:StaticResource BankrNeonPink}"   HeightRequest="50" WidthRequest="100" Text="Withdraw" Clicked="OnWithdrawClicked"/>
+                        <Button  BackgroundColor="{x:StaticResource BankrBlack}" TextColor="{x:StaticResource BankrNeonPink}"   HeightRequest="50" WidthRequest="100" Text="Deposit" Clicked="OnDepositClicked"/>
+                        <Button  BackgroundColor="{x:StaticResource BankrBlack}" TextColor="{x:StaticResource BankrNeonPink}"   HeightRequest="50" WidthRequest="100" Text="Transfer" Clicked="OnTransferClicked"/>
                     </HorizontalStackLayout>
 
                     <HorizontalStackLayout Margin="0" VerticalOptions="End" BackgroundColor="{x:StaticResource BankrBlack}" HeightRequest="75">

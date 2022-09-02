@@ -105,6 +105,13 @@ namespace Bankr.Service
             }
         }
 
+        public double GetFundsTotal()
+        {
+            Init();
+            return conn.Table<Transaction>().Sum(r => r.TransactionAmount);
+
+        }
+
         public void Transfer(Transaction item)
         {
             Account accountIn = App.AccountRepo.GetAccountFromId(item.AccountIn);

@@ -8,7 +8,7 @@ using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace Bankr.Model
 {
-    // [Table("account")]
+     [Table("transaction")]
     public partial class Transaction : ObservableObject
     {
         [PrimaryKey, AutoIncrement, Column("_id")]
@@ -19,10 +19,8 @@ namespace Bankr.Model
         public double TransactionFee { get; set; }
 
         public double TransactionAmount { get; set; }
-        public Color TransactionColour { get; set; }
 
 
     }
-
 
 }

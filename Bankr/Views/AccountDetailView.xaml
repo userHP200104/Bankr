@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Bankr.Views.AccountDetailView"
+             Title="AccountDetailView"
+             BackgroundImageSource="backdrop.png"
+             BackgroundColor="{x:StaticResource BankrBlack}">
+    <VerticalStackLayout WidthRequest="900" Margin="0,50" Background="">
+
+        <HorizontalStackLayout WidthRequest="900" Spacing="50" Margin="0,0,0,25">
+            <VerticalStackLayout WidthRequest="225" Spacing="2">
+                <Label TextColor="{x:StaticResource BankrNeonPink}" FontSize="Micro" >Total</Label>
+                <Label x:Name="AccountBalance" TextColor="{x:StaticResource BankrWhite}" FontSize="Large"></Label>
+            </VerticalStackLayout>
+            <HorizontalStackLayout>
+                <VerticalStackLayout WidthRequest="225" Spacing="2">
+                    <Label TextColor="{x:StaticResource BankrNeonPink}" FontSize="Micro" >Free Transactions:</Label>
+                    <Label x:Name="FreeTransactions" TextColor="{x:StaticResource BankrWhite}" FontSize="Large"></Label>
+                </VerticalStackLayout>
+                <VerticalStackLayout WidthRequest="225" Spacing="2">
+                    <Label TextColor="{x:StaticResource BankrNeonPink}" FontSize="Micro" >Transaction Fee:</Label>
+                    <Label x:Name="TransactionFee" TextColor="{x:StaticResource BankrWhite}" FontSize="Large"></Label>
+                </VerticalStackLayout>
+            </HorizontalStackLayout>
+            <VerticalStackLayout WidthRequest="225" Spacing="2">
+                <HorizontalStackLayout>
+                    <Label VerticalOptions="Center" TextColor="{x:StaticResource BankrNeonBlue}" FontSize="Micro" >Account Holder</Label>
+                </HorizontalStackLayout>
+                <Label x:Name="AccountHolder" TextColor="{x:StaticResource BankrWhite}" FontSize="Medium"></Label>
+                <HorizontalStackLayout>
+                    <Label HorizontalOptions="Start" TextColor="{x:StaticResource BankrWhite}" Opacity="0.7"  FontSize="Micro">Account No:</Label>
+                    <Label HorizontalTextAlignment="End" HorizontalOptions="End" x:Name="AccountNumber" TextColor="{x:StaticResource BankrWhite}" Opacity="0.7" FontSize="Micro"></Label>
+                </HorizontalStackLayout>
+
+            </VerticalStackLayout>
+        </HorizontalStackLayout>
+
+        <VerticalStackLayout HeightRequest="600" BackgroundColor="{x:StaticResource BankrBlack}" Padding="0" IsClippedToBounds="True">
+            <VerticalStackLayout.Shadow>
+                <Shadow 
+                            Brush="black"
+                            Offset="0,0"
+                            Radius="50"
+                            Opacity=".5"/>
+            </VerticalStackLayout.Shadow>
+
+            <Frame HeightRequest="600" BackgroundColor="{x:StaticResource BankrBlack}" Padding="0" HasShadow="True" BorderColor="{x:StaticResource BankrBlack}" IsClippedToBounds="True">
+                <Frame.Shadow>
+                    <Shadow
+                            Brush="black"
+                            Offset="0,10"
+                            Radius="20"
+                            Opacity=".5"/>
+                </Frame.Shadow>
+
+                <VerticalStackLayout HeightRequest="600"  Padding="0" BackgroundColor="{x:StaticResource BankrBlack}">
+
+
+                    <HorizontalStackLayout Margin="0,0,0,10" WidthRequest="900" HeightRequest="90" Padding="35" Spacing="100" BackgroundColor="{x:StaticResource BankrBlack}">
+
+                        <Label TextColor="{x:StaticResource BankrWhite}" HorizontalTextAlignment="Start" WidthRequest="200" Text="Amount"/>
+                        <Label TextColor="{x:StaticResource BankrWhite}" HorizontalTextAlignment="Center" WidthRequest="200" Text="From"/>
+                        <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="End" WidthRequest="200" Text="Type"/>
+                        <HorizontalStackLayout.Shadow>
+                            <Shadow
+                            Brush="black"
+                            Offset="0,10"
+                            Radius="20"
+                            Opacity=".5"
+                            />
+                        </HorizontalStackLayout.Shadow>
+                    </HorizontalStackLayout>
+                    <CollectionView SelectionMode="Single" x:Name="Transactions" HeightRequest="325">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <HorizontalStackLayout WidthRequest="900" HeightRequest="75" Padding="25,15,15,25" Spacing="100">
+                                    <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="Start"  WidthRequest="200" Text="{Binding TransactionAmount}"/>
+                                    <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="Center"  WidthRequest="200" Text="{Binding AccountOut}"/>
+                                    <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="End" WidthRequest="200" Text="{Binding TransactionType}"/>
+                                </HorizontalStackLayout>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+
+
+                    </CollectionView>
+
+                    <HorizontalStackLayout>
+                        <Button  BackgroundColor="{x:StaticResource BankrBlack}" TextColor="{x:StaticResource BankrNeonPink}"   HeightRequest="75" WidthRequest="100" Text="Withdraw" Clicked="OnWithdrawClicked"/>
+                        <Button  BackgroundColor="{x:StaticResource BankrBlack}" TextColor="{x:StaticResource BankrNeonPink}"   HeightRequest="75" WidthRequest="100" Text="Deposit" Clicked="OnDepositClicked"/>
+                        <Button  BackgroundColor="{x:StaticResource BankrBlack}" TextColor="{x:StaticResource BankrNeonPink}"   HeightRequest="75" WidthRequest="100" Text="Transfer" Clicked="OnTransferClicked"/>
+                    </HorizontalStackLayout>
+
+                    <HorizontalStackLayout Margin="0" VerticalOptions="End" BackgroundColor="{x:StaticResource BankrBlack}" HeightRequest="75">
+                        <Button  BackgroundColor="{x:StaticResource BankrBlack}" TextColor="{x:StaticResource BankrNeonPink}"   HeightRequest="75" WidthRequest="100" Text="Delete" Clicked="OnDeleteClicked"/>
+                        <Label  x:Name="AccountType" VerticalOptions="Center"  WidthRequest="900" HorizontalTextAlignment="Center" TextColor="{x:StaticResource BankrWhite}" FontSize="Medium"></Label>
+                        <HorizontalStackLayout.Shadow>
+                            <Shadow
+                        Brush="black"
+                        Offset="0,-10"
+                        Radius="30"
+                        Opacity=".5"
+                        />
+                        </HorizontalStackLayout.Shadow>
+                    </HorizontalStackLayout>
+
+
+
+
+                </VerticalStackLayout>
+
+            </Frame>
+        </VerticalStackLayout>
+
+
+    </VerticalStackLayout>
+</ContentPage>

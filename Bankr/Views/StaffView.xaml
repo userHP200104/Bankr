@@ -1,0 +1,85 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Bankr.Views.StaffView"
+             Title="SingleAccount"
+             BackgroundImageSource="backdrop.png"
+             BackgroundColor="{x:StaticResource BankrBlack}">
+    <VerticalStackLayout WidthRequest="900" Margin="0,50" >
+
+        <VerticalStackLayout HeightRequest="700" BackgroundColor="{x:StaticResource BankrBlack}" Padding="0" IsClippedToBounds="True">
+            <VerticalStackLayout.Shadow>
+                <Shadow 
+                            Brush="black"
+                            Offset="0,0"
+                            Radius="50"
+                            Opacity=".5"/>
+            </VerticalStackLayout.Shadow>
+
+            <Frame HeightRequest="700" BackgroundColor="{x:StaticResource BankrBlack}" Padding="0" HasShadow="True" BorderColor="{x:StaticResource BankrBlack}" IsClippedToBounds="True">
+                <Frame.Shadow>
+                    <Shadow
+                            Brush="black"
+                            Offset="0,10"
+                            Radius="20"
+                            Opacity=".5"/>
+                </Frame.Shadow>
+                <VerticalStackLayout HeightRequest="700"  Padding="0" BackgroundColor="{x:StaticResource BankrBlack}">
+
+
+                    <HorizontalStackLayout Margin="0,0,0,10" WidthRequest="900" HeightRequest="90" Padding="35" Spacing="75" BackgroundColor="{x:StaticResource BankrBlack}">
+
+                        <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="Start"  WidthRequest="150" Text="STAFF ID"/>
+                        <Label TextColor="{x:StaticResource BankrWhite}" HorizontalTextAlignment="Center" WidthRequest="150" Text="FIRST NAME"/>
+                        <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="Center" WidthRequest="150" Text="LAST NAME"/>
+                        <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="End" WidthRequest="150" Text="ROLE"/>
+                        <HorizontalStackLayout.Shadow>
+                            <Shadow
+                            Brush="black"
+                            Offset="0,10"
+                            Radius="20"
+                            Opacity=".5"
+                            />
+                        </HorizontalStackLayout.Shadow>
+                    </HorizontalStackLayout>
+
+
+
+                        <CollectionView SelectionMode="Single" HeightRequest="530" BackgroundColor="{x:StaticResource BankrBlack}" x:Name="StaffCollection" SelectionChanged="OnStaffClicked">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate >
+                                <HorizontalStackLayout WidthRequest="900" HeightRequest="70" Padding="25" Spacing="75">
+                                    <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="Start"  WidthRequest="150" Text="{Binding Id}"/>
+                                    <Label TextColor="{x:StaticResource BankrWhite}" HorizontalTextAlignment="Center" WidthRequest="150" Text="{Binding Name}"/>
+                                    <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="Center" WidthRequest="150" Text="{Binding Surname}"/>
+                                    <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="End" WidthRequest="150" Text="{Binding Role}"/>
+                                </HorizontalStackLayout>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+
+
+
+                    <HorizontalStackLayout  WidthRequest="900" BackgroundColor="{x:StaticResource BankrBlack}" HeightRequest="75">
+
+                        <Label  VerticalOptions="Center"  WidthRequest="850" HorizontalTextAlignment="Center" TextColor="{x:StaticResource BankrWhite}" Opacity="0.2" FontAttributes="Bold" FontSize="Medium">STAFF</Label>
+                        <Button   VerticalOptions="Center"  WidthRequest="50" BackgroundColor="{x:StaticResource BankrBlack}" TextColor="{x:StaticResource BankrNeonBlue}" Opacity="1" FontAttributes="Bold" FontSize="Large" Text="+" Clicked="OnAddClicked"></Button>
+                        <HorizontalStackLayout.Shadow>
+                            <Shadow
+                            Brush="black"
+                            Offset="0,-10"
+                            Radius="30"
+                            Opacity=".5"
+                            />
+                        </HorizontalStackLayout.Shadow>
+                    </HorizontalStackLayout>
+
+
+
+                </VerticalStackLayout>
+
+            </Frame>
+        </VerticalStackLayout>
+
+
+    </VerticalStackLayout>
+</ContentPage>

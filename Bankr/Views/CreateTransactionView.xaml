@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Bankr.Views.CreateTransactionView"
+             Title="CreateTransactionView"
+			 BackgroundImageSource="backdrop.png"
+             BackgroundColor="{x:StaticResource BankrBlack}"
+			 >
+
+     <ContentPage.Content>
+        <VerticalStackLayout
+		WidthRequest="450"
+		HorizontalOptions="Center"
+		VerticalOptions="Start"
+		Margin="50"
+		>
+            <Label
+			FontAttributes="Bold"
+			FontSize="Large"
+			TextColor="{x:StaticResource BankrWhite}"
+			Text="Create Transaction"/>
+
+			<Label 
+			Margin="0,20,0,0"
+			FontSize="Medium"
+			TextColor="{x:StaticResource BankrYellow}"
+            Text="Transaction Amount"  />
+            <Entry  Text="{Binding Name}"
+                   BackgroundColor="{x:StaticResource BankrWhite}"
+				    TextColor="{x:StaticResource BankrDarkGray}"/>
+
+            <Label 
+			Margin="0,20,0,0"
+			FontSize="Medium"
+			TextColor="{x:StaticResource BankrYellow}"
+            Text="Your Account ID"  />
+            <Entry  x:Name="AccountNumber"
+                   BackgroundColor="{x:StaticResource BankrWhite}"
+				    TextColor="{x:StaticResource BankrDarkGray}"/>
+
+			<Label 
+            WidthRequest="350" 
+            HorizontalTextAlignment="Center"
+            Margin="0,50,0,10"
+            TextColor="{x:StaticResource BankrYellow}" 
+            FontSize="Medium"
+            Text="Your Account Type"
+            />
+            <Label 
+            WidthRequest="350" 
+            HorizontalTextAlignment="Center"
+            Margin="0,50,0,10"
+            TextColor="{x:StaticResource BankrYellow}" 
+            FontSize="Medium"
+            x:Name="AccountType"
+            />
+
+            <Label 
+			Margin="0,20,0,0"
+			FontSize="Medium"
+			TextColor="{x:StaticResource BankrYellow}"
+            Text="Receiver Account ID"  />
+            <Entry  Text="{Binding Name}"
+                   BackgroundColor="{x:StaticResource BankrWhite}"
+				    TextColor="{x:StaticResource BankrDarkGray}"/>
+
+			<Label 
+            WidthRequest="350" 
+            HorizontalTextAlignment="Center"
+            Margin="0,50,0,10"
+            TextColor="{x:StaticResource BankrYellow}" 
+            FontSize="Medium"
+            Text="Receiver Account Type"
+            />
+            <Picker x:Name="receiverAccountType" 
+                x:DataType="x:String"
+                WidthRequest="250" 
+                Margin="0,0,0,50"
+                TextColor="{x:StaticResource BankrBlack}"
+		        BackgroundColor="{x:StaticResource BankrLightGray}" 
+                FontSize="Small"
+                >
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Easy Access Savings</x:String>
+                        <x:String>Tax Free Savings</x:String>
+                        <x:String>Gold Cheque</x:String>
+                        <x:String>Diamond Cheque</x:String>
+                        <x:String>Credit</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+
+
+            <Button 
+			WidthRequest="100"
+			Margin="0,20,0,0" 
+			BackgroundColor="{x:StaticResource BankrYellow}" 
+			TextColor="{x:StaticResource BankrBlack}" 
+			Text="Make me broke"/>
+
+        </VerticalStackLayout>
+    </ContentPage.Content>
+</ContentPage>

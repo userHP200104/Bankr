@@ -63,6 +63,20 @@ namespace Bankr.Service
             }
             
         }
+
+       public int GetClientsTotal()
+        {
+            try
+            {
+                Init();
+                return conn.Table<Client>().Count();
+            }
+            catch (Exception ex)
+            {
+                return 0;
+            }
+        }
+
         //public Task<List<People>> GetCustomers()
         //{
         //  return Database.QueryAsync<People>("SELECT * FROM [people] WHERE [Role]=Customer");

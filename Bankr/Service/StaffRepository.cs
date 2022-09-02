@@ -63,6 +63,19 @@ namespace Bankr.Service
         //  return Database.Table<People>().Where(i => i.Id == id).FirstOrDefaultAsync();
         //}
 
+        public int GetStaffTotal()
+        {
+            try
+            {
+                Init();
+                return conn.Table<Staff>().Where(i => i.Role == "Admin").Count();
+            }
+            catch (Exception ex)
+            {
+                return 0;
+            }
+        }
+
         public void SaveStaff(Staff item)
         {
             try

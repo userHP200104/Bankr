@@ -19,6 +19,7 @@ public partial class TransferView : ContentPage
         base.OnAppearing();
 
     }
+
     async void OnEnterClicked(object sender, EventArgs e)
     {
         // string Amount= AmountInput.Text;
@@ -33,7 +34,7 @@ public partial class TransferView : ContentPage
             AccountOut = accountid,
             AccountIn = receivingAccountId,
             TransactionAmount = amount,
-            TransactionType = "transfer"
+            TransactionType = "transfer",
         };
 
         Debug.WriteLine("AccountIn" + transaction.AccountIn);

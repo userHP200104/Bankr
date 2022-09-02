@@ -63,6 +63,19 @@ namespace Bankr.Service
 
         }
 
+        public int GetAccountsTotal()
+        {
+            try
+            {
+                Init();
+                return conn.Table<Account>().Count();
+            }
+            catch (Exception ex)
+            {
+                return 0;
+            }
+        }
+
         public List<Account> GetAccountsForClient(int clientid)
         {
             try

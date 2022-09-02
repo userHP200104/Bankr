@@ -38,6 +38,9 @@ namespace Bankr.ViewModels
         string transactionType;
 
         [ObservableProperty]
+        Color transactionColour;
+
+        [ObservableProperty]
         ObservableCollection<Transaction> transactions;
     }
 }

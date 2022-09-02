@@ -10,12 +10,12 @@
     Shell.NavBarIsVisible="False"
     >
 
-    <FlyoutItem Title="Staff"
+    <FlyoutItem Title="Home"
                 >
 
         <ShellContent
-            ContentTemplate="{DataTemplate local:Views.StaffView}"
-            Route="Staff" 
+            ContentTemplate="{DataTemplate local:Views.DashboardView}"
+            Route="Home" 
         />
     </FlyoutItem>
 
@@ -28,7 +28,16 @@
         />
 
 
-        </FlyoutItem>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Staff"
+                >
+
+        <ShellContent
+            ContentTemplate="{DataTemplate local:Views.StaffView}"
+            Route="Staff" 
+        />
+    </FlyoutItem>
 
     <ShellContent
         FlyoutItemIsVisible="False"

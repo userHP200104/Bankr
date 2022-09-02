@@ -18,6 +18,7 @@ public partial class WithdrawView : ContentPage
         base.OnAppearing();
 
     }
+
     async void OnEnterClicked(object sender, EventArgs e)
     {
         // string Amount= AmountInput.Text;
@@ -31,7 +32,7 @@ public partial class WithdrawView : ContentPage
             AccountOut = accountid,
             AccountIn = 0,
             TransactionAmount = amount,
-            TransactionType = "withdrawal"
+            TransactionType = "withdrawal",
         };
         App.TransactionRepo.Withdrawal(transaction);
         await Navigation.PopAsync();

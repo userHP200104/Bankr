@@ -1,9 +1,9 @@
-namespace Bankr.Views;
 using Bankr.Data;
 using Bankr.Model;
 using Bankr.ViewModels;
 using Microsoft.Maui.Controls;
 
+namespace Bankr.Views;
 
 
 public partial class AccountDetailView : ContentPage
@@ -23,6 +23,7 @@ public partial class AccountDetailView : ContentPage
         int accountid = int.Parse((string)AccountId);
         Account Account;
         Client Client;
+
 
         if (App.AccountRepo.GetAccountFromId(accountid) != null)
         {

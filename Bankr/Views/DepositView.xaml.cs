@@ -18,6 +18,7 @@ public partial class DepositView : ContentPage
         base.OnAppearing();
 
     }
+
     async void OnEnterClicked(object sender, EventArgs e)
     {
         // string Amount= AmountInput.Text;
@@ -31,7 +32,7 @@ public partial class DepositView : ContentPage
             AccountOut = 0,
             AccountIn = accountid,
             TransactionAmount = amount,
-            TransactionType="deposit"
+            TransactionType="deposit",
         };
         App.TransactionRepo.Deposit(transaction);
         await Navigation.PopAsync();

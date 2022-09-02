@@ -49,5 +49,8 @@
     <Color x:Key="BankrNeonBlue">#00FFFF</Color>
     <Color x:Key="BankrNeonPink">#FF2F9E</Color>
     <Color x:Key="BankrNeonRed">#FF0050</Color>
+    <Color x:Key="withdrawal">#FF0050</Color>
+    <Color x:Key="transfer">#f7f7f7</Color>
+    <Color x:Key="deposit">#00FFA0</Color>
 
 </ResourceDictionary>

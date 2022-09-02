@@ -45,6 +45,9 @@ namespace Bankr.ViewModels
         Staff selectedClient;
 
         [ObservableProperty]
+        public string totalClients;
+
+        [ObservableProperty]
         ObservableCollection<Client> clients;
 
         public void AddClient()

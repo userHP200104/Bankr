@@ -1,80 +1,92 @@
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Bankr.Views.AccountsView"
              Title="AccountsView"
              BackgroundImageSource="backdrop.png"
              BackgroundColor="{x:StaticResource BankrBlack}">
-    <VerticalStackLayout WidthRequest="900" Margin="0,50" >
+    <Grid RowDefinitions="100, *, 132" ColumnDefinitions="*" Padding="120,100">
 
-        <VerticalStackLayout HeightRequest="700" BackgroundColor="{x:StaticResource BankrBlack}" Padding="0" IsClippedToBounds="True">
-            <VerticalStackLayout.Shadow>
-                <Shadow 
-                            Brush="black"
-                            Offset="0,0"
-                            Radius="50"
-                            Opacity=".5"/>
-            </VerticalStackLayout.Shadow>
+    <!--Table Headers-->
 
-            <Frame HeightRequest="700" BackgroundColor="{x:StaticResource BankrBlack}" Padding="0" HasShadow="True" BorderColor="{x:StaticResource BankrBlack}" IsClippedToBounds="True">
-                <Frame.Shadow>
-                    <Shadow
-                            Brush="black"
-                            Offset="0,10"
-                            Radius="20"
-                            Opacity=".5"/>
-                </Frame.Shadow>
-                <VerticalStackLayout HeightRequest="700"  Padding="0" BackgroundColor="{x:StaticResource BankrBlack}">
+        <Frame
+            BackgroundColor="{x:StaticResource BankrBlack}"
+            BorderColor="Transparent"
+            HasShadow="True"
+            Grid.Row="0">
+
+            <Frame.Shadow>
+                <Shadow
+                    Brush="black"
+                    Offset="0,0"
+                    Radius="50"
+                    Opacity="1"/>
+
+            </Frame.Shadow>
+
+        </Frame>
+
+        <FlexLayout JustifyContent="SpaceAround" AlignItems="Center" Direction="Row" Grid.Row="0" HorizontalOptions="Center" VerticalOptions="Center">
+
+            <Label TextColor="{x:StaticResource BankrWhite}" Text="Account ID" FontSize="20" FontFamily="SFProDisplaySemibold" HorizontalTextAlignment="Center" TextTransform="Uppercase" CharacterSpacing="4.8" WidthRequest="500"/>
+
+            <Label TextColor="{x:StaticResource BankrWhite}" Text="Account" FontSize="20" FontFamily="SFProDisplaySemibold" HorizontalTextAlignment="Start" TextTransform="Uppercase" CharacterSpacing="4.8" WidthRequest="500" Padding="128, 0"/>
+
+            <Label TextColor="{x:StaticResource BankrWhite}" Text="balance" FontSize="20" FontFamily="SFProDisplaySemibold" HorizontalTextAlignment="Center" TextTransform="Uppercase" CharacterSpacing="4.8" WidthRequest="500"/>
 
 
-                    <HorizontalStackLayout Margin="0,0,0,10" WidthRequest="900" HeightRequest="90" Padding="35" Spacing="75" BackgroundColor="{x:StaticResource BankrBlack}">
 
-                        <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="Start"  WidthRequest="200" Text="ACCOUNT ID"/>
-                        <Label TextColor="{x:StaticResource BankrWhite}" HorizontalTextAlignment="Center" WidthRequest="200" Text="ACCOUNT"/>
-                        <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="End" WidthRequest="200" Text="BALANCE"/>
-                        <HorizontalStackLayout.Shadow>
-                            <Shadow
-                            Brush="black"
-                            Offset="0,10"
-                            Radius="20"
-                            Opacity=".5"
-                            />
-                        </HorizontalStackLayout.Shadow>
-                    </HorizontalStackLayout>
+        </FlexLayout>
 
-                    <CollectionView SelectionMode="Single" x:Name="collectionView" HeightRequest="530" BackgroundColor="{x:StaticResource BankrBlack}" SelectionChanged="OnAccountClicked">
+       <!--Transaction Details-->
+            <CollectionView SelectionMode="Single" x:Name="collectionView" BackgroundColor="{x:StaticResource BankrBlackTransparent}" SelectionChanged="OnAccountClicked" Grid.Row="1">
                         <CollectionView.ItemTemplate>
-                            <DataTemplate >
-                                <HorizontalStackLayout WidthRequest="900" HeightRequest="70" Padding="25" Spacing="75">
-                                    <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="Start"  WidthRequest="200" Text="{Binding Id}"/>
-                                    <Label TextColor="{x:StaticResource BankrWhite}" HorizontalTextAlignment="Center" WidthRequest="200" Text="{Binding AccountType}"/>
-                                    <Label TextColor="{x:StaticResource BankrWhite}" HorizontalTextAlignment="End" WidthRequest="150" Text="R"/>
-                                    <Label TextColor="{x:StaticResource BankrWhite}" HorizontalTextAlignment="Start" WidthRequest="50" Text="{Binding Balance}"/>
-                                </HorizontalStackLayout>
+                            <DataTemplate>
+
+                                    <FlexLayout JustifyContent="SpaceAround" AlignItems="Center" Direction="Row" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="100" BackgroundColor="{x:StaticResource BankrBlackTransparent}" Padding="128">
+
+                                        <Label TextColor="{x:StaticResource BankrWhite}" Text="{Binding Id}" FontSize="20" FontFamily="SFProDisplaySemibold" HorizontalTextAlignment="Center" TextTransform="Uppercase" CharacterSpacing="4.8" WidthRequest="500"/>
+
+                                        <Label TextColor="{x:StaticResource BankrWhite}" Text="{Binding AccountType}" FontSize="20" FontFamily="SFProDisplaySemibold" HorizontalTextAlignment="Start" TextTransform="Uppercase" CharacterSpacing="4.8" WidthRequest="500"  Padding="128, 0"/>
+                                        <HorizontalStackLayout Spacing="10">
+                                            <Label TextColor="{x:StaticResource BankrWhite}" Text="R" FontSize="20" FontFamily="SFProDisplaySemibold" HorizontalTextAlignment="End" WidthRequest="200" TextTransform="Uppercase" CharacterSpacing="4.8" Padding="0"/>
+                                            <Label TextColor="{x:StaticResource BankrWhite}" Text="{Binding Balance, StringFormat=' {0:n}'}" FontSize="20" FontFamily="SFProDisplaySemibold" HorizontalTextAlignment="Start" WidthRequest="300" TextTransform="Uppercase" CharacterSpacing="4.8" Padding="0, 0, 128, 0"/>
+                                        </HorizontalStackLayout>
+
+                                    </FlexLayout>
+
                             </DataTemplate>
                         </CollectionView.ItemTemplate>
                     </CollectionView>
 
-                    <HorizontalStackLayout  WidthRequest="900" BackgroundColor="{x:StaticResource BankrBlack}" HeightRequest="75">
-                        <Button  Clicked="OnEditClicked" BackgroundColor="{x:StaticResource BankrBlack}" TextColor="{x:StaticResource BankrNeonPink}"   HeightRequest="75" WidthRequest="100" Text="EDIT"/>
-                        <Label  x:Name="ClientName" VerticalOptions="Center"  WidthRequest="700" HorizontalTextAlignment="Center" TextColor="{x:StaticResource BankrWhite}" Opacity="0.7" FontAttributes="Bold" FontSize="Medium"></Label>
-                        <Button   VerticalOptions="Center"  WidthRequest="100" BackgroundColor="{x:StaticResource BankrBlack}" TextColor="{x:StaticResource BankrNeonBlue}" Opacity="1" FontAttributes="Bold" FontSize="Large" Text="+" Clicked="OnAddClicked"></Button>
-                        <HorizontalStackLayout.Shadow>
-                            <Shadow
-                            Brush="black"
-                            Offset="0,-10"
-                            Radius="30"
-                            Opacity=".5"
-                            />
-                        </HorizontalStackLayout.Shadow>
-                    </HorizontalStackLayout>
+            
 
 
+       <!--Table Footer-->
 
-                </VerticalStackLayout>
+        <Frame
+            BackgroundColor="{x:StaticResource BankrBlack}"
+            BorderColor="Transparent"
+            HasShadow="True"
+            Grid.Row="2">
 
-            </Frame>
-        </VerticalStackLayout>
+            <Frame.Shadow>
+                <Shadow
+                    Brush="black"
+                    Offset="10,10"
+                    Radius="70"
+                    Opacity="1"/>
+
+            </Frame.Shadow>
+
+            <HorizontalStackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="Center">
+
+                <Button VerticalOptions="Center" Margin="0" BackgroundColor="{x:StaticResource BankrBlack}" TextColor="{x:StaticResource BankrYellow}" Opacity="1" FontAttributes="Bold" FontSize="24" Text="EDIT" Clicked="OnEditClicked"/>
+                <Label TextColor="{x:StaticResource BankrDarkGray}" x:Name="ClientName" WidthRequest="1600" FontSize="34" Margin="0, 10, 0, 0" FontFamily="SFProDisplayMedium" HorizontalTextAlignment="Center" CharacterSpacing="12.8" TextTransform="Uppercase"/>
+                <Button VerticalOptions="Center" Margin="30, 0, 0, 0" WidthRequest="50" BackgroundColor="{x:StaticResource BankrBlack}" TextColor="{x:StaticResource BankrYellow}" Opacity="1" FontAttributes="Bold" FontSize="34" Text="+" Clicked="OnAddClicked"/>
+
+            </HorizontalStackLayout>
 
 
-    </VerticalStackLayout>
+        </Frame>
+    </Grid>
 </ContentPage>

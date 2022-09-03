@@ -100,9 +100,6 @@
 	  <MauiXaml Update="Views\Home.xaml">
 	    <SubType></SubType>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\CreateTransactionView.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
 	  <MauiXaml Update="Views\WithdrawView.xaml">
 	    <SubType></SubType>
 	  </MauiXaml>

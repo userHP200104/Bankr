@@ -1,85 +1,100 @@
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Bankr.Views.StaffView"
              Title="SingleAccount"
              BackgroundImageSource="backdrop.png"
              BackgroundColor="{x:StaticResource BankrBlack}">
-    <VerticalStackLayout WidthRequest="900" Margin="0,50" >
+<Grid RowDefinitions="100, *, 132" ColumnDefinitions="*" Padding="120,100">
 
-        <VerticalStackLayout HeightRequest="700" BackgroundColor="{x:StaticResource BankrBlack}" Padding="0" IsClippedToBounds="True">
-            <VerticalStackLayout.Shadow>
-                <Shadow 
-                            Brush="black"
-                            Offset="0,0"
-                            Radius="50"
-                            Opacity=".5"/>
-            </VerticalStackLayout.Shadow>
+    <!--Table Headers-->
 
-            <Frame HeightRequest="700" BackgroundColor="{x:StaticResource BankrBlack}" Padding="0" HasShadow="True" BorderColor="{x:StaticResource BankrBlack}" IsClippedToBounds="True">
-                <Frame.Shadow>
-                    <Shadow
-                            Brush="black"
-                            Offset="0,10"
-                            Radius="20"
-                            Opacity=".5"/>
-                </Frame.Shadow>
-                <VerticalStackLayout HeightRequest="700"  Padding="0" BackgroundColor="{x:StaticResource BankrBlack}">
+        <Frame
+            BackgroundColor="{x:StaticResource BankrBlack}"
+            BorderColor="Transparent"
+            HasShadow="True"
+            Grid.Row="0">
 
+            <Frame.Shadow>
+                <Shadow
+                    Brush="black"
+                    Offset="0,0"
+                    Radius="50"
+                    Opacity="1"/>
 
-                    <HorizontalStackLayout Margin="0,0,0,10" WidthRequest="900" HeightRequest="90" Padding="35" Spacing="75" BackgroundColor="{x:StaticResource BankrBlack}">
+            </Frame.Shadow>
 
-                        <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="Start"  WidthRequest="150" Text="STAFF ID"/>
-                        <Label TextColor="{x:StaticResource BankrWhite}" HorizontalTextAlignment="Center" WidthRequest="150" Text="FIRST NAME"/>
-                        <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="Center" WidthRequest="150" Text="LAST NAME"/>
-                        <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="End" WidthRequest="150" Text="ROLE"/>
-                        <HorizontalStackLayout.Shadow>
-                            <Shadow
-                            Brush="black"
-                            Offset="0,10"
-                            Radius="20"
-                            Opacity=".5"
-                            />
-                        </HorizontalStackLayout.Shadow>
-                    </HorizontalStackLayout>
+        </Frame>
 
+        <FlexLayout JustifyContent="SpaceAround" AlignItems="Center" Direction="Row" Grid.Row="0" HorizontalOptions="Center" VerticalOptions="Center">
 
+            <Label TextColor="{x:StaticResource BankrWhite}" Text="STAFF ID" FontSize="20" FontFamily="SFProDisplaySemibold" HorizontalTextAlignment="Center" TextTransform="Uppercase" CharacterSpacing="4.8" WidthRequest="500"/>
 
-                        <CollectionView SelectionMode="Single" HeightRequest="530" BackgroundColor="{x:StaticResource BankrBlack}" x:Name="StaffCollection" SelectionChanged="OnStaffClicked">
-                        <CollectionView.ItemTemplate>
-                            <DataTemplate >
-                                <HorizontalStackLayout WidthRequest="900" HeightRequest="70" Padding="25" Spacing="75">
-                                    <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="Start"  WidthRequest="150" Text="{Binding Id}"/>
-                                    <Label TextColor="{x:StaticResource BankrWhite}" HorizontalTextAlignment="Center" WidthRequest="150" Text="{Binding Name}"/>
-                                    <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="Center" WidthRequest="150" Text="{Binding Surname}"/>
-                                    <Label TextColor="{x:StaticResource BankrWhite}"  HorizontalTextAlignment="End" WidthRequest="150" Text="{Binding Role}"/>
-                                </HorizontalStackLayout>
-                            </DataTemplate>
-                        </CollectionView.ItemTemplate>
-                    </CollectionView>
+            <Label TextColor="{x:StaticResource BankrWhite}" Text="FIRST NAME" FontSize="20" FontFamily="SFProDisplaySemibold" HorizontalTextAlignment="Center" TextTransform="Uppercase" CharacterSpacing="4.8" WidthRequest="500" Padding="128, 0"/>
 
+            <Label TextColor="{x:StaticResource BankrWhite}" Text="LAST NAME" FontSize="20" FontFamily="SFProDisplaySemibold" HorizontalTextAlignment="Center" TextTransform="Uppercase" CharacterSpacing="4.8" WidthRequest="500"/>
+            
+            <Label TextColor="{x:StaticResource BankrWhite}" Text="ROLE" FontSize="20" FontFamily="SFProDisplaySemibold" HorizontalTextAlignment="Center" TextTransform="Uppercase" CharacterSpacing="4.8" WidthRequest="500"/>
 
+        </FlexLayout>
 
-                    <HorizontalStackLayout  WidthRequest="900" BackgroundColor="{x:StaticResource BankrBlack}" HeightRequest="75">
+       <!--Transaction Details-->
 
-                        <Label  VerticalOptions="Center"  WidthRequest="850" HorizontalTextAlignment="Center" TextColor="{x:StaticResource BankrWhite}" Opacity="0.2" FontAttributes="Bold" FontSize="Medium">STAFF</Label>
-                        <Button   VerticalOptions="Center"  WidthRequest="50" BackgroundColor="{x:StaticResource BankrBlack}" TextColor="{x:StaticResource BankrNeonBlue}" Opacity="1" FontAttributes="Bold" FontSize="Large" Text="+" Clicked="OnAddClicked"></Button>
-                        <HorizontalStackLayout.Shadow>
-                            <Shadow
-                            Brush="black"
-                            Offset="0,-10"
-                            Radius="30"
-                            Opacity=".5"
-                            />
-                        </HorizontalStackLayout.Shadow>
-                    </HorizontalStackLayout>
+            <CollectionView SelectionMode="Single" x:Name="StaffCollection" BackgroundColor="{x:StaticResource BankrBlackTransparent}" SelectionChanged="OnStaffClicked" Grid.Row="1">
+            <!--<CollectionView.Shadow>
+                <Shadow
+                    Brush="black"
+                    Offset="10,10"
+                    Radius="70"
+                    Opacity="1"/>
+
+            </CollectionView.Shadow>-->
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+
+                            <FlexLayout JustifyContent="SpaceAround" AlignItems="Center" Direction="Row" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="100" BackgroundColor="{x:StaticResource BankrBlackTransparent}" Padding="128">
+
+                                <Label TextColor="{x:StaticResource BankrWhite}" Text="{Binding Id}" FontSize="20" FontFamily="SFProDisplaySemibold" HorizontalTextAlignment="Center" TextTransform="Uppercase" CharacterSpacing="4.8" WidthRequest="500"  Margin="128"/>
+
+                                <Label TextColor="{x:StaticResource BankrWhite}" Text="{Binding Name}" FontSize="20" FontFamily="SFProDisplaySemibold" HorizontalTextAlignment="Center" TextTransform="Uppercase" CharacterSpacing="4.8" WidthRequest="500"  Margin="128"/>
+
+                                <Label TextColor="{x:StaticResource BankrWhite}" Text="{Binding Surname}" FontSize="20" FontFamily="SFProDisplaySemibold" HorizontalTextAlignment="Center" TextTransform="Uppercase" CharacterSpacing="4.8" WidthRequest="500"  Margin="128"/>
+                                
+                                <Label TextColor="{x:StaticResource BankrWhite}" Text="{Binding Role}" FontSize="20" FontFamily="SFProDisplaySemibold" HorizontalTextAlignment="Center" TextTransform="Uppercase" CharacterSpacing="4.8" WidthRequest="500"  Margin="128"/>
+
+                            </FlexLayout>
+
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            
 
 
+       <!--Table Footer-->
 
-                </VerticalStackLayout>
+        <Frame
+            BackgroundColor="{x:StaticResource BankrBlack}"
+            BorderColor="Transparent"
+            HasShadow="True"
+            Grid.Row="2">
 
-            </Frame>
-        </VerticalStackLayout>
+            <Frame.Shadow>
+                <Shadow
+                    Brush="black"
+                    Offset="10,10"
+                    Radius="70"
+                    Opacity="1"/>
+
+            </Frame.Shadow>
+
+            <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+
+                <Label TextColor="{x:StaticResource BankrDarkGray}" Text="staff" FontSize="34" Margin="760, 10, 0, 0" FontFamily="SFProDisplayMedium" HorizontalTextAlignment="Center" CharacterSpacing="12.8" TextTransform="Uppercase"/>
+                <Button VerticalOptions="Center" Margin="760, 0, 0, 0" WidthRequest="50" BackgroundColor="{x:StaticResource BankrBlack}" TextColor="{x:StaticResource BankrYellow}" Opacity="1" FontAttributes="Bold" FontSize="34" Text="+" Clicked="OnAddClicked"/>
+
+            </HorizontalStackLayout>
 
 
-    </VerticalStackLayout>
+        </Frame>
+    </Grid>
 </ContentPage>

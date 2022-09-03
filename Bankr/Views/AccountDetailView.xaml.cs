@@ -32,10 +32,10 @@ public partial class AccountDetailView : ContentPage
 
             AccountHolder.Text = Client.Name + " " + Client.Surname;
             AccountNumber.Text = Account.Id.ToString();
-            AccountBalance.Text = Account.Balance.ToString();
+            AccountBalance.Text = "R" + String.Format("{0:n}", Account.Balance); 
             AccountType.Text=Account.AccountType.ToString();
             FreeTransactions.Text = Account.FreeTransactions.ToString();
-            TransactionFee.Text=Account.TransFee.ToString();
+            TransactionFee.Text= "R" + String.Format("{0:n}", Account.TransFee);
 
 //            if (App.AccountRepo.GetTransactionsForAccount(accountid) != null)
             //{

@@ -17,10 +17,10 @@ public partial class FundsView : ContentPage
         double setIntrest = App.TransactionRepo.GetInterest();
         double setNetTotal = App.TransactionRepo.GetNetTotal();
 
-        totalRollover.Text = setRollover.ToString();
-        totalTransactionFee.Text = setTransactionFee.ToString();
-        totalInterestPaid.Text = setIntrest.ToString();
-        netTotal.Text = setNetTotal.ToString();
+        totalRollover.Text = String.Format("{0:n}", setRollover);
+        totalTransactionFee.Text = String.Format("{0:n}", setTransactionFee);
+        totalInterestPaid.Text = String.Format("{0:n}", setIntrest);
+        netTotal.Text = String.Format("{0:n}", setNetTotal);
 
         Debug.WriteLine("Total Clients " + setRollover);
         Debug.WriteLine("Total Admins " + setTransactionFee);

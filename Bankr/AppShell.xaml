@@ -33,10 +33,10 @@
             Route="Login"/>
 
 
-    <FlyoutItem Title="Home"
-                >
+    <FlyoutItem Title="Home">
 
         <ShellContent
+            Icon="home.png"
             ContentTemplate="{DataTemplate local:Views.DashboardView}"
             Route="Home" 
         />
@@ -44,10 +44,10 @@
         
     </FlyoutItem>
 
-    <FlyoutItem Title="Clients"
-                >
+    <FlyoutItem Title="Clients">
 
             <ShellContent
+            Icon="clients.png"
             ContentTemplate="{DataTemplate local:Views.ClientView}"
             Route="Clients" 
         />
@@ -55,31 +55,32 @@
 
     </FlyoutItem>
 
-    <FlyoutItem Title="Staff"
-                >
+    <FlyoutItem Title="Staff" >
 
         <ShellContent
+            Icon="staff.png"
             ContentTemplate="{DataTemplate local:Views.StaffView}"
             Route="Staff" 
         />
     </FlyoutItem>
 
-    <FlyoutItem Title="Funds"
-                >
+    <FlyoutItem Title="Funds">
 
         <ShellContent
+            Icon="funds.png"
             ContentTemplate="{DataTemplate local:Views.FundsView}"
             Route="Funds" 
         />
     </FlyoutItem>
 
-    <FlyoutItem Title="Log Out"
-                >
+    <FlyoutItem Title="Log Out">
 
-        <ShellContent ContentTemplate="{DataTemplate local:Views.Login}"
-                      Shell.FlyoutBehavior="Disabled"
-                                        Route="Login"
-                                        Title="Log Out"/>
+        <ShellContent
+            Icon="log_out.png"
+            ContentTemplate="{DataTemplate local:Views.Login}"
+            Shell.FlyoutBehavior="Disabled"
+            Route="Login"
+            Title="Log Out"/>
 
     </FlyoutItem>
 

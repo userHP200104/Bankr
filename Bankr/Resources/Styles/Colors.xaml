@@ -43,6 +43,7 @@
 
     <Color x:Key="BankrWhite">#f7f7f7</Color>
     <Color x:Key="BankrBlack">#101010</Color>
+    <Color x:Key="BankrBlackTransparent">#80101010</Color>
     <Color x:Key="BankrDarkGray">#1A1A1A</Color>
     <Color x:Key="BankrLightGray">#595959</Color>
     <Color x:Key="BankrYellow">#F8C100</Color>

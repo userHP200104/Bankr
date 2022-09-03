@@ -32,9 +32,6 @@ public static class MauiProgram
         builder.Services.AddSingleton<AccountDetailView>();
         // builder.Services.AddSingleton<TodoViewModel>();
 
-        builder.Services.AddSingleton<CreateTransactionView>();
-
-
         //DB Repos
         string userDbPath = FileAccessHelper.GetLocalFilePath("projectDatabase.db3");
         builder.Services.AddSingleton<ClientRepository>(s => ActivatorUtilities.CreateInstance<ClientRepository>(s, userDbPath));

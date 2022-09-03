@@ -5,10 +5,33 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:Bankr"
     Shell.FlyoutBehavior="Locked"
-    FlyoutWidth="150"
+    FlyoutWidth="170"
     FlyoutBackgroundColor="{x:StaticResource BankrBlack}"
     Shell.NavBarIsVisible="False"
     >
+
+    <Shell.FlyoutHeaderTemplate>
+                        <DataTemplate>
+                        <Grid RowDefinitions="300">
+                            <Image Source="bankr_logo.png"
+                                    VerticalOptions="Start"
+                                    HorizontalOptions="Center"
+                                    WidthRequest="40"
+                                    HeightRequest="140"
+                                    Margin="80"
+                            />
+
+                        </Grid>
+                    </DataTemplate>
+
+        </Shell.FlyoutHeaderTemplate>
+
+    <ShellContent
+            FlyoutItemIsVisible="False"
+            Shell.FlyoutBehavior="Disabled"
+            ContentTemplate="{DataTemplate local:Views.Login}"
+            Route="Login"/>
+
 
     <FlyoutItem Title="Home"
                 >
@@ -17,6 +40,8 @@
             ContentTemplate="{DataTemplate local:Views.DashboardView}"
             Route="Home" 
         />
+
+        
     </FlyoutItem>
 
     <FlyoutItem Title="Clients"
@@ -46,6 +71,16 @@
             ContentTemplate="{DataTemplate local:Views.FundsView}"
             Route="Funds" 
         />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Log Out"
+                >
+
+        <ShellContent ContentTemplate="{DataTemplate local:Views.Login}"
+                      Shell.FlyoutBehavior="Disabled"
+                                        Route="Login"
+                                        Title="Log Out"/>
+
     </FlyoutItem>
 
     <ShellContent

@@ -26,7 +26,7 @@ public partial class DashboardView : ContentPage
         lblTotalClients.Text = clients.ToString();
         lblTotalAdmin.Text = staff.ToString();
         lblTotalAccounts.Text = accounts.ToString();
-        lblTotalFunds.Text = totalFunds.ToString();
+        lblTotalFunds.Text = "R" + String.Format("{0:n}", totalFunds);
 
         Debug.WriteLine("Total Clients " + clients);
         Debug.WriteLine("Total Admins " + staff);

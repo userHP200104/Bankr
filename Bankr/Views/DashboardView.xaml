@@ -14,7 +14,6 @@
             Grid.Column="0"
             Grid.ColumnSpan="3"
             BackgroundColor="{x:StaticResource BankrBlack}"
-            CornerRadius="20"
             BorderColor="Transparent"
             HasShadow="True"
             Padding="0">
@@ -28,18 +27,12 @@
 
             </Frame.Shadow>
 
-            <VerticalStackLayout>
 
             <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
-                <HorizontalStackLayout>
-                    <Label TextColor="{x:StaticResource BankrWhite}" Text="R" FontSize="100" FontFamily="SFProDisplayMedium" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" CharacterSpacing="12.8"/>
                     <Label x:Name="lblTotalFunds" TextColor="{x:StaticResource BankrWhite}" FontSize="100" FontFamily="SFProDisplayMedium" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" CharacterSpacing="12.8"/>
-                </HorizontalStackLayout>
-                <Label TextColor="{x:StaticResource BankrYellow}" Text="total funds in pool" FontSize="24" FontFamily="SFProDisplaySemibold" TextTransform="Uppercase" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" CharacterSpacing="4.32"/>
-
+                    <Label TextColor="{x:StaticResource BankrYellow}" Text="total funds in pool" FontSize="24" FontFamily="SFProDisplaySemibold" TextTransform="Uppercase" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" CharacterSpacing="4.32"/>
             </VerticalStackLayout>
 
-            </VerticalStackLayout>
 
 
         </Frame>
@@ -48,7 +41,6 @@
             Grid.Row="1"
             Grid.Column="0"
             BackgroundColor="{x:StaticResource BankrBlack}"
-            CornerRadius="20"
             BorderColor="Transparent"
             HasShadow="True">
 
@@ -75,7 +67,6 @@
             Grid.Row="1"
             Grid.Column="1"
             BackgroundColor="{x:StaticResource BankrBlack}"
-            CornerRadius="20"
             BorderColor="Transparent"
             HasShadow="True">
 
@@ -103,7 +94,6 @@
             Grid.Row="1"
             Grid.Column="2"
             BackgroundColor="{x:StaticResource BankrBlack}"
-            CornerRadius="20"
             BorderColor="Transparent"
             HasShadow="True">
 

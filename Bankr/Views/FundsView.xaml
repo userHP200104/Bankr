@@ -5,15 +5,14 @@
              Title="FundsView"
              BackgroundImageSource="backdrop.png"
              BackgroundColor="{x:StaticResource BankrBlack}">
-    <Grid RowDefinitions="*, *, *, *" ColumnDefinitions="*" RowSpacing="64" ColumnSpacing="100" Padding="120,175, 90, 175">
+    <Grid RowDefinitions="*, *, *, *, 64" ColumnDefinitions="*" RowSpacing="32" ColumnSpacing="320" Padding="120,175, 90, 175">
 
         <Frame
             Grid.Row="0"
             BackgroundColor="{x:StaticResource BankrBlack}"
-            CornerRadius="20"
             BorderColor="Transparent"
             HasShadow="True"
-            Padding="0">
+            Padding="20">
 
             <Frame.Shadow>
                 <Shadow
@@ -43,10 +42,9 @@
         <Frame
             Grid.Row="1"
             BackgroundColor="{x:StaticResource BankrBlack}"
-            CornerRadius="20"
             BorderColor="Transparent"
             HasShadow="True"
-            Padding="0">
+            Padding="20">
 
             <Frame.Shadow>
                 <Shadow
@@ -76,10 +74,9 @@
         <Frame
             Grid.Row="2"
             BackgroundColor="{x:StaticResource BankrBlack}"
-            CornerRadius="20"
             BorderColor="Transparent"
             HasShadow="True"
-            Padding="0">
+            Padding="20">
 
             <Frame.Shadow>
                 <Shadow
@@ -109,10 +106,9 @@
         <Frame
             Grid.Row="3"
             BackgroundColor="{x:StaticResource BankrBlack}"
-            CornerRadius="20"
             BorderColor="Transparent"
             HasShadow="True"
-            Padding="0">
+            Padding="20">
 
             <Frame.Shadow>
                 <Shadow
@@ -134,18 +130,13 @@
 
                 </VerticalStackLayout>
 
-                <Button Text="Close Month" TextColor="{x:StaticResource BankrWhite}" BackgroundColor="{x:StaticResource BankrYellow}" FontAttributes="Bold" FontSize="34" WidthRequest="500"/>
 
             </VerticalStackLayout>
 
 
         </Frame>
 
-        
+        <Button Grid.Row="4" Text="Close Month" TextColor="{x:StaticResource BankrYellow}" BackgroundColor="{x:StaticResource BankrBlack}" FontAttributes="Bold" FontSize="34" WidthRequest="340"/>
 
-
-
-        
-        
     </Grid>
 </ContentPage>

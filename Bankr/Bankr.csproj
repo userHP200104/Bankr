@@ -100,9 +100,6 @@
 	  <MauiXaml Update="Views\Home.xaml">
 	    <SubType></SubType>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\Funds.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
 	  <MauiXaml Update="Views\CreateTransactionView.xaml">
 	    <SubType></SubType>
 	  </MauiXaml>
@@ -113,6 +110,9 @@
 	    <SubType></SubType>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\DashboardView.xaml">
+	    <SubType></SubType>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\FundsView.xaml">
 	    <SubType></SubType>
 	  </MauiXaml>
 	</ItemGroup>

@@ -7,10 +7,45 @@
              x:DataType="viewmodel:ClientViewModel"
              BackgroundImageSource="backdrop.png"
              BackgroundColor="{x:StaticResource BankrBlack}">
-<Grid RowDefinitions="*, 3*" ColumnDefinitions="*, *, *" RowSpacing="64" ColumnSpacing="100" Padding="120,175, 90, 175">
+<Grid RowDefinitions="*, *" ColumnDefinitions="*, *, *" RowSpacing="64" ColumnSpacing="100" Padding="120,175, 90, 175">
 
         <Frame
             Grid.Row="0"
+            Grid.Column="0"
+            Grid.ColumnSpan="3"
+            BackgroundColor="{x:StaticResource BankrBlack}"
+            CornerRadius="20"
+            BorderColor="Transparent"
+            HasShadow="True"
+            Padding="0">
+
+            <Frame.Shadow>
+                <Shadow
+                    Brush="black"
+                    Offset="0,0"
+                    Radius="70"
+                    Opacity="1"/>
+
+            </Frame.Shadow>
+
+            <VerticalStackLayout>
+
+            <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                <HorizontalStackLayout>
+                    <Label TextColor="{x:StaticResource BankrWhite}" Text="R" FontSize="100" FontFamily="SFProDisplayMedium" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" CharacterSpacing="12.8"/>
+                    <Label x:Name="lblTotalFunds" TextColor="{x:StaticResource BankrWhite}" FontSize="100" FontFamily="SFProDisplayMedium" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" CharacterSpacing="12.8"/>
+                </HorizontalStackLayout>
+                <Label TextColor="{x:StaticResource BankrYellow}" Text="total funds in pool" FontSize="24" FontFamily="SFProDisplaySemibold" TextTransform="Uppercase" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" CharacterSpacing="4.32"/>
+
+            </VerticalStackLayout>
+
+            </VerticalStackLayout>
+
+
+        </Frame>
+
+        <Frame
+            Grid.Row="1"
             Grid.Column="0"
             BackgroundColor="{x:StaticResource BankrBlack}"
             CornerRadius="20"
@@ -37,7 +72,7 @@
         </Frame>
 
         <Frame
-            Grid.Row="0"
+            Grid.Row="1"
             Grid.Column="1"
             BackgroundColor="{x:StaticResource BankrBlack}"
             CornerRadius="20"
@@ -65,7 +100,7 @@
         </Frame>
 
         <Frame
-            Grid.Row="0"
+            Grid.Row="1"
             Grid.Column="2"
             BackgroundColor="{x:StaticResource BankrBlack}"
             CornerRadius="20"
@@ -85,87 +120,6 @@
 
                 <Label x:Name="lblTotalAccounts" TextColor="{x:StaticResource BankrWhite}" FontSize="100" FontFamily="SFProDisplayMedium" HorizontalTextAlignment="Center" CharacterSpacing="12.8"/>
                 <Label TextColor="{x:StaticResource BankrYellow}" Text="total accounts" FontSize="24" FontFamily="SFProDisplaySemibold" TextTransform="Uppercase" HorizontalTextAlignment="Center" CharacterSpacing="4.32"/>
-
-            </VerticalStackLayout>
-
-
-        </Frame>
-
-        <Frame
-            Grid.Row="1"
-            Grid.Column="0"
-            Grid.ColumnSpan="3"
-            BackgroundColor="{x:StaticResource BankrBlack}"
-            CornerRadius="20"
-            BorderColor="Transparent"
-            HasShadow="True"
-            Padding="0">
-
-            <Frame.Shadow>
-                <Shadow
-                    Brush="black"
-                    Offset="0,0"
-                    Radius="70"
-                    Opacity="1"/>
-
-            </Frame.Shadow>
-
-            <VerticalStackLayout>
-
-
-                    <Frame
-                        Grid.Row="1"
-                        Grid.Column="0"
-                        Grid.ColumnSpan="3"
-                        BackgroundColor="{x:StaticResource BankrBlack}"
-                        CornerRadius="20"
-                        BorderColor="Transparent"
-                        HasShadow="True"
-                        Padding="64">
-
-                        <Frame.Shadow>
-                            <Shadow
-                                Brush="black"
-                                Offset="0,0"
-                                Radius="70"
-                                Opacity="1"/>
-
-                        </Frame.Shadow>
-
-                        <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
-
-                            <Label TextColor="{x:StaticResource BankrWhite}" Text="R20,534,094.81" FontSize="100" FontFamily="SFProDisplayMedium" HorizontalTextAlignment="Center" CharacterSpacing="12.8"/>
-                            <Label TextColor="{x:StaticResource BankrYellow}" Text="total funds in pool" FontSize="24" FontFamily="SFProDisplaySemibold" TextTransform="Uppercase" HorizontalTextAlignment="Center" CharacterSpacing="4.32"/>
-
-                        </VerticalStackLayout>
-
-
-                    </Frame>
-
-
-
-                <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="240">
-
-                    <Label TextColor="{x:StaticResource BankrWhite}" Text="Show graph here" FontSize="100" FontFamily="SFProDisplayMedium" HorizontalTextAlignment="Center" CharacterSpacing="12.8" VerticalTextAlignment="Center"/>
-
-                </VerticalStackLayout>
-
-                <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center" Spacing="64">
-
-                    <Label TextColor="{x:StaticResource BankrWhite}" Text="jan" FontSize="16" FontFamily="SFProDisplayHeavy" TextTransform="Uppercase" HorizontalTextAlignment="Center" CharacterSpacing="2.8"/>
-                    <Label TextColor="{x:StaticResource BankrWhite}" Text="feb" FontSize="16" FontFamily="SFProDisplayHeavy" TextTransform="Uppercase" HorizontalTextAlignment="Center" CharacterSpacing="2.8"/>
-                    <Label TextColor="{x:StaticResource BankrWhite}" Text="mar" FontSize="16" FontFamily="SFProDisplayHeavy" TextTransform="Uppercase" HorizontalTextAlignment="Center" CharacterSpacing="2.8"/>
-                    <Label TextColor="{x:StaticResource BankrWhite}" Text="apr" FontSize="16" FontFamily="SFProDisplayHeavy" TextTransform="Uppercase" HorizontalTextAlignment="Center" CharacterSpacing="2.8"/>
-                    <Label TextColor="{x:StaticResource BankrWhite}" Text="may" FontSize="16" FontFamily="SFProDisplayHeavy" TextTransform="Uppercase" HorizontalTextAlignment="Center" CharacterSpacing="2.8"/>
-                    <Label TextColor="{x:StaticResource BankrWhite}" Text="jun" FontSize="16" FontFamily="SFProDisplayHeavy" TextTransform="Uppercase" HorizontalTextAlignment="Center" CharacterSpacing="2.8"/>
-                    <Label TextColor="{x:StaticResource BankrWhite}" Text="jul" FontSize="16" FontFamily="SFProDisplayHeavy" TextTransform="Uppercase" HorizontalTextAlignment="Center" CharacterSpacing="2.8"/>
-                    <Label TextColor="{x:StaticResource BankrYellow}" Text="aug" FontSize="16" FontFamily="SFProDisplayHeavy" TextTransform="Uppercase" HorizontalTextAlignment="Center" CharacterSpacing="2.8"/>
-                    <Label TextColor="{x:StaticResource BankrWhite}" Text="sep" FontSize="16" FontFamily="SFProDisplayHeavy" TextTransform="Uppercase" HorizontalTextAlignment="Center" CharacterSpacing="2.8"/>
-                    <Label TextColor="{x:StaticResource BankrWhite}" Text="oct" FontSize="16" FontFamily="SFProDisplayHeavy" TextTransform="Uppercase" HorizontalTextAlignment="Center" CharacterSpacing="2.8"/>
-                    <Label TextColor="{x:StaticResource BankrWhite}" Text="nov" FontSize="16" FontFamily="SFProDisplayHeavy" TextTransform="Uppercase" HorizontalTextAlignment="Center" CharacterSpacing="2.8"/>
-                    <Label TextColor="{x:StaticResource BankrWhite}" Text="dec" FontSize="16" FontFamily="SFProDisplayHeavy" TextTransform="Uppercase" HorizontalTextAlignment="Center" CharacterSpacing="2.8"/>
-
-                </HorizontalStackLayout>
 
             </VerticalStackLayout>
 

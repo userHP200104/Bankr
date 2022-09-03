@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Bankr.Views.FundsView"
+             Title="FundsView"
+             BackgroundImageSource="backdrop.png"
+             BackgroundColor="{x:StaticResource BankrBlack}">
+    <Grid RowDefinitions="*, *, *, *" ColumnDefinitions="*" RowSpacing="64" ColumnSpacing="100" Padding="120,175, 90, 175">
+
+        <Frame
+            Grid.Row="0"
+            BackgroundColor="{x:StaticResource BankrBlack}"
+            CornerRadius="20"
+            BorderColor="Transparent"
+            HasShadow="True"
+            Padding="0">
+
+            <Frame.Shadow>
+                <Shadow
+                    Brush="black"
+                    Offset="0,0"
+                    Radius="70"
+                    Opacity="1"/>
+
+            </Frame.Shadow>
+
+            <VerticalStackLayout>
+
+            <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                <Label TextColor="{x:StaticResource BankrYellow}" Text="ROLLOVER" FontSize="24" FontFamily="SFProDisplaySemibold" TextTransform="Uppercase" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" CharacterSpacing="4.32"/>
+                <HorizontalStackLayout>
+                    <Label TextColor="{x:StaticResource BankrWhite}" Text="R" FontSize="100" FontFamily="SFProDisplayMedium" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" CharacterSpacing="12.8"/>
+                    <Label x:Name="totalRollover" TextColor="{x:StaticResource BankrWhite}" FontSize="100" FontFamily="SFProDisplayMedium" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" CharacterSpacing="12.8"/>
+                </HorizontalStackLayout>
+
+            </VerticalStackLayout>
+
+            </VerticalStackLayout>
+
+
+        </Frame>
+
+        <Frame
+            Grid.Row="1"
+            BackgroundColor="{x:StaticResource BankrBlack}"
+            CornerRadius="20"
+            BorderColor="Transparent"
+            HasShadow="True"
+            Padding="0">
+
+            <Frame.Shadow>
+                <Shadow
+                    Brush="black"
+                    Offset="0,0"
+                    Radius="70"
+                    Opacity="1"/>
+
+            </Frame.Shadow>
+
+            <VerticalStackLayout>
+
+            <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                <Label TextColor="{x:StaticResource BankrWhite}" Text="TRANSACTION FEES" FontSize="24" FontFamily="SFProDisplaySemibold" TextTransform="Uppercase" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" CharacterSpacing="4.32"/>
+                <HorizontalStackLayout>
+                    <Label TextColor="{x:StaticResource BankrNeonBlue}" Text="+R" FontSize="100" FontFamily="SFProDisplayMedium" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" CharacterSpacing="12.8"/>
+                    <Label x:Name="totalTransactionFee" TextColor="{x:StaticResource BankrNeonBlue}" FontSize="100" FontFamily="SFProDisplayMedium" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" CharacterSpacing="12.8"/>
+                </HorizontalStackLayout>
+
+            </VerticalStackLayout>
+
+            </VerticalStackLayout>
+
+
+        </Frame>
+
+        <Frame
+            Grid.Row="2"
+            BackgroundColor="{x:StaticResource BankrBlack}"
+            CornerRadius="20"
+            BorderColor="Transparent"
+            HasShadow="True"
+            Padding="0">
+
+            <Frame.Shadow>
+                <Shadow
+                    Brush="black"
+                    Offset="0,0"
+                    Radius="70"
+                    Opacity="1"/>
+
+            </Frame.Shadow>
+
+            <VerticalStackLayout>
+
+            <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                <Label TextColor="{x:StaticResource BankrWhite}" Text="INTEREST PAYOUTS" FontSize="24" FontFamily="SFProDisplaySemibold" TextTransform="Uppercase" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" CharacterSpacing="4.32"/>
+                <HorizontalStackLayout>
+                    <Label TextColor="{x:StaticResource BankrNeonRed}" Text="-R" FontSize="100" FontFamily="SFProDisplayMedium" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" CharacterSpacing="12.8"/>
+                    <Label x:Name="totalInterestPaid" TextColor="{x:StaticResource BankrNeonRed}" FontSize="100" FontFamily="SFProDisplayMedium" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" CharacterSpacing="12.8"/>
+                </HorizontalStackLayout>
+
+            </VerticalStackLayout>
+
+            </VerticalStackLayout>
+
+
+        </Frame>
+
+        <Frame
+            Grid.Row="3"
+            BackgroundColor="{x:StaticResource BankrBlack}"
+            CornerRadius="20"
+            BorderColor="Transparent"
+            HasShadow="True"
+            Padding="0">
+
+            <Frame.Shadow>
+                <Shadow
+                    Brush="black"
+                    Offset="0,0"
+                    Radius="70"
+                    Opacity="1"/>
+
+            </Frame.Shadow>
+
+            <VerticalStackLayout>
+
+                <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                    <Label TextColor="{x:StaticResource BankrYellow}" Text="TOTAL" FontSize="24" FontFamily="SFProDisplaySemibold" TextTransform="Uppercase" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" CharacterSpacing="4.32"/>
+                    <HorizontalStackLayout>
+                        <Label TextColor="{x:StaticResource BankrWhite}" Text="R" FontSize="100" FontFamily="SFProDisplayMedium" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" CharacterSpacing="12.8"/>
+                        <Label x:Name="netTotal" TextColor="{x:StaticResource BankrWhite}" FontSize="100" FontFamily="SFProDisplayMedium" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" CharacterSpacing="12.8"/>
+                    </HorizontalStackLayout>
+
+                </VerticalStackLayout>
+
+                <Button Text="Close Month" TextColor="{x:StaticResource BankrWhite}" BackgroundColor="{x:StaticResource BankrYellow}" FontAttributes="Bold" FontSize="34" WidthRequest="500"/>
+
+            </VerticalStackLayout>
+
+
+        </Frame>
+
+        
+
+
+
+        
+        
+    </Grid>
+</ContentPage>

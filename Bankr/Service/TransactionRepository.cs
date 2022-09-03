@@ -52,6 +52,39 @@ namespace Bankr.Service
             return new List<Transaction>();
         }
 
+        public double GetRollover()
+        {
+            Init();
+            return conn.Table<Transaction>().Sum(r => r.TransactionAmount);
+        }
+
+        public double GetTransactionFee()
+        {
+                Init();
+                return conn.Table<Transaction>().Count() * 30;
+        }
+
+        public double GetInterest()
+        {
+            Init();
+            return Math.Round(conn.Table<Transaction>().Sum(r => r.TransactionAmount * 0.1), 3);
+        }
+
+        public double GetNetTotal()
+        {
+
+            double rollover = GetRollover();
+            double transactionFee = GetTransactionFee();
+            double interest = GetInterest();
+
+            double netTotal = 0;
+
+            netTotal = rollover + transactionFee - interest;
+
+            return netTotal;
+
+        }
+
         public void Withdrawal(Transaction item)
         {
             Account accountOut = App.AccountRepo.GetAccountFromId(item.AccountOut);

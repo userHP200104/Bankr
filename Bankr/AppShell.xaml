@@ -39,6 +39,15 @@
         />
     </FlyoutItem>
 
+    <FlyoutItem Title="Funds"
+                >
+
+        <ShellContent
+            ContentTemplate="{DataTemplate local:Views.FundsView}"
+            Route="Funds" 
+        />
+    </FlyoutItem>
+
     <ShellContent
         FlyoutItemIsVisible="False"
         ContentTemplate="{DataTemplate local:Views.SingleAccount}"

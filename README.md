@@ -204,7 +204,7 @@ The `Development Process` is the technical implementations and functionality don
 ### Future Implementation
 <!-- stipulate functionality and improvements that can be implemented in the future. -->
 
-* Trading chemicals between warehouses.
+* Being able to print out bank statements for the bank and the clients.
 
 ## Final Outcome
 
